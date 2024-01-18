@@ -1,4 +1,4 @@
-# Proyecto LoginLogoffTema Multicapa
+# Proyecto Final Multicapa
 
 ## Autor
 
@@ -13,7 +13,7 @@ Alvaro Cordero Miñambres
 
 ## Descripcion
 
-Aplicacion Loginlogoff Multicapa usando Modelo Vista Controlador
+Aplicacion Final Multicapa usando Modelo Vista Controlador
 
 ## Funcionalidad
 
