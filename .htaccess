@@ -1,0 +1,4 @@
+Options -Indexes
+DirectoryIndex index.php index.html
+ErrorDocument 403 /206DWESLoginLogOff/error/403.html
+ErrorDocument 404 /206DWESLoginLogOff/error/404.html
