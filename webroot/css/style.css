@@ -1,65 +1,106 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;900&family=Poppins:wght@500&display=swap");
 
 * {
-	margin: 0;
-	padding: 0;
-	font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
 }
 
 a {
-	text-decoration: none;
-	color: black;
+  text-decoration: none !important;
+  color: black !important;
 }
 
 li {
-	padding: 0;
-	margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 body {
-	height: 98vh;
-	background-color: #e6e3e3;
+  height: 98vh;
 }
 
 main {
-	min-height: 87%;
+  background-color: #e6e3e3;
+  min-height: 90%;
 }
 
 header {
-	height: 48px;
-	background-color: white;
+  height: 48px;
+  background-color: white;
 }
 
 header ul {
-	padding: 0;
-	margin: 0;
-	display: flex;
-	list-style: none;
-	justify-content: space-between;
-	align-items: center;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+  align-items: center;
 }
 
-header ul >li:nth-child(1) {
-	margin-left: 30px;
+header ul > li:nth-child(1) {
+  margin-left: 30px;
 }
 
-header ul >li:nth-child(3) {
-	margin-right: 40px;
+header ul > li:nth-child(3) {
+  margin-right: 80px;
 }
 
 .title {
-	font-size: 30px;
-	font-weight: bold;
-	letter-spacing: 2px;
+  font-size: 33px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  align-self: center;
 }
 
 button {
-	background: none;
-	border: 2px solid transparent;
-	font-size: 0.8rem;
-	font-weight: 400;
+  background: none;
+  border: 2px solid transparent;
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+#volverBTN {
+  margin-right: 10px;
+  width: 80px;
+  height: 40px;
+  border: 1px solid;
+  background: black;
+  border-radius: 5px;
+  font-size: 15px;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
 }
 
 .btnIdioma:hover {
-	border-bottom: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+#carru {
+  padding-top: 40px;
+}
+
+.registrarse {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.registrarse p {
+  font-size: 12px;
+}
+
+.registrarse input {
+  text-decoration: none;
+  background: none;
+  border: none;
+  color: black;
+  font-weight: 600;
+}
+
+footer {
+	height: 48px;
 }

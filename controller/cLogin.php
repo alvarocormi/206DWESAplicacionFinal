@@ -3,6 +3,7 @@
 /**
  * @author Alvaro Cordero <https://github.com/alvarocormi>
  * @author Ismael Ferreras <https://github.com/IsmaelFG>
+ * @author  Carlos Garcia 
  * @version 1.0
  * @since 16-01-2024
  * 
@@ -20,6 +21,22 @@ if (isset($_REQUEST['cancelar'])) {
 
     // Finaliza la ejecución del script
     exit();
+}
+
+//Si el usuario pulsa el botón 'Registrarse', mando al usuario al index de DWES
+if(isset($_REQUEST['registrarse'])){
+    
+    // Asigno a la página anterior la página de login
+    $_SESSION['paginaAnterior'] = 'login';
+    
+    // Asigno a la pagina en curso la pagina de registro
+    $_SESSION['paginaEnCurso'] = 'registro'; 
+
+    // Redirecciono al index de la APP
+    header('Location: index.php'); 
+
+    //Finalizado la ejecucion del script
+    exit;
 }
 
 //Esta variable booleana la usaremos para indicar si las respuestas son correctas
@@ -55,6 +72,7 @@ if (isset($_REQUEST['enviar'])) {
         // En caso verdadero cambiamos el valor de '$entradaOK' a 'false'
         $entradaOK = false;
     }
+    
     /**
      * Validamos el usuario 
      * Validamos la contrseña

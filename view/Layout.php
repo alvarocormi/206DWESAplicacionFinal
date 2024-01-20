@@ -9,6 +9,8 @@
     <!-- CSS -->
     <link rel="stylesheet" href="./webroot/css/boostrap.css" />
     <link rel="stylesheet" href="./webroot/css/style.css" />
+    <!-- JS -->
+    <script src="webroot\js\bootstrap.js"></script>
 </head>
 
 <body>
@@ -32,24 +34,26 @@
                 <a href="#">APPFINAL</a>
             </li>
             <li>
+            <form method="post" action="index.php">
                 <button type="submit" name="login" class="btnLogin">
                     LOGIN
                     <svg version="1.1" viewBox="0 0 40 40" class="svg-icon svg-fill" style="width: 40px; height: 40px; padding-left: 0;">
                         <path pid="0" d="M28.627 27.761V28a.8.8 0 11-1.6 0v-.238c0-.3-.11-.577-.282-.707-1.559-1.182-3.924-1.833-6.66-1.833s-5.103.651-6.66 1.833c-.171.13-.283.407-.283.707V28a.8.8 0 11-1.598 0v-.238c0-.807.34-1.547.913-1.982 1.836-1.39 4.544-2.157 7.627-2.157 3.085 0 5.793.766 7.628 2.157.573.435.915 1.175.915 1.982M15.902 16.59a4.208 4.208 0 014.595-3.769 4.209 4.209 0 013.77 4.596 4.178 4.178 0 01-1.518 2.836 4.179 4.179 0 01-3.08.933 4.183 4.183 0 01-2.836-1.517 4.182 4.182 0 01-.931-3.079m3.61 6.188a5.81 5.81 0 006.345-5.204 5.762 5.762 0 00-1.287-4.25 5.768 5.768 0 00-3.916-2.095 5.755 5.755 0 00-4.25 1.288 5.764 5.764 0 00-2.095 3.916 5.761 5.761 0 001.288 4.25 5.758 5.758 0 003.915 2.095" _fill="#000" fill-rule="nonzero"></path>
                     </svg>
                 </button>
+            </form>  
             </li>
         </ul>
     </header>
     <main>
-    
+    <?php require_once $aVistas[$_SESSION['paginaEnCurso']]; ?>
     </main>
 </body>
-<footer class="d-flex flex-wrap justify-content-sm-between align-items-center py-3 my-4 border-top">
-    <div class="col-md-4 d-flex align-items-center" style="margin-left: 30px;">
+<footer class="d-flex flex-wrap justify-content-sm-between align-items-center my-2">
+    <div class="col-md-4 d-flex align-items-center" style="margin-left: 45px;">
         <span class="mb-3 mb-md-0 text-body-secondary">© 2024 IES Los Sauces</span>
     </div>
-    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex" style="margin-right: 30px;">
+    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex" style="margin-right: 45px;">
         <li class="ms-3">
             <a class="text-body-secondary" href="#">©Alvaro Cordero</a>
         </li>

@@ -73,6 +73,57 @@ class UsuarioPDO implements UsuarioDB {
         // Devuelve el objeto Usuario actualizado
         return $oUsuario;
     }
+
+    /**
+     * Mediante este metodo podremos dar de alta a un usuario en nuestra base de datos
+     * Es decir realizar una consulta de insercion pasandole los siguientes parametros
+     * 
+     * @param string $codUsuario El codigo del usuario
+     * @param string $password La password del usuario
+     * @param string $descUsuario La descripcion del usuario
+     * 
+     * @return boolean false | object Usuario Devuelve un objeto Usuario nuevo si se ha podido crear, de lo contrario devuelve un @boolean que sera 'false'
+     */
+    public static function altaUsuario($codUsuario, $password, $descUsuario) {
+
+        //CONSULTA SQL - INSERT
+        $consultaCrearUsuario = <<<CONSULTA
+            INSERT INTO T01_Usuario(T01_CodUsuario, T01_Password, T01_DescUsuario, T01_NumConexiones, T01_FechaHoraUltimaConexion) 
+            VALUES ("{$codUsuario}", SHA2("{$codUsuario}{$password}", 256), "{$descUsuario}", 1, now());
+        CONSULTA;
+        
+        //Si se ejecuta la consulta correctamente
+        if (DBPDO::ejecutaConsulta($consultaCrearUsuario)) { 
+
+            //Creo un usuario con los valores recogidos como parametros
+            return new Usuario($codUsuario, $password, $descUsuario, 1, date('Y-m-d H:i:s'), null, 'usuario');
+
+            // Si la consulta falla devuelvo
+        } else {
+
+            //Devuelvo false
+            return false; 
+        }
+    }
+
+
+    /**
+     * Metodo que nos permite validar si el código de un usuario existe en la BD
+     * 
+     * @param string $codUsuario El código del usuario
+     * 
+     * @return object  con el primer resultado de la consulta ejecutada
+     */
+    public static function validarCodNoExiste($codUsuario) {
+
+        //CONSULTA SQL - SELECT mediante la cual comprobamos si el codigo esta en la base de datos
+        $consultaExisteUsuario = <<<CONSULTA
+            SELECT T01_CodUsuario FROM T01_Usuario WHERE T01_CodUsuario='{$codUsuario}';
+        CONSULTA;
+
+        //Devolvemos un objeto con el primer resultado de la consulta
+        return DBPDO::ejecutaConsulta($consultaExisteUsuario)->fetchObject();
+    }
 }
 
 
