@@ -124,6 +124,31 @@ class UsuarioPDO implements UsuarioDB {
         //Devolvemos un objeto con el primer resultado de la consulta
         return DBPDO::ejecutaConsulta($consultaExisteUsuario)->fetchObject();
     }
+
+
+     /**
+     * 
+     * Metodo que nos permite modificar la descripción de un Usuario existente en la BD
+     * 
+     * @param object $oUsuario Objeto usuario
+     * @param string $descUsuario La nueva descripción
+     * 
+     * @return boolean | object Un objeto usuario, si el usuario existe y se puede cambiar, de lo contrario un boolean a 'false'
+     */
+    public static function modificarUsuario($oUsuario, $descUsuario) {
+        //CONSULTA SQL - UPDATE
+        $consultaModificarUsuario = <<<CONSULTA
+            UPDATE T01_Usuario SET T01_DescUsuario="{$descUsuario}" WHERE T01_CodUsuario="{$oUsuario->getCodUsuario()}";
+        CONSULTA;
+
+        $oUsuario->setDescUsuario($descUsuario);
+
+        if (DBPDO::ejecutaConsulta($consultaModificarUsuario)) { // Ejecuto la consulta
+            return $oUsuario; // Devuelvo un objeto Usuario
+        } else {
+            return false;
+        }
+    }
 }
 
 

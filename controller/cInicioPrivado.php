@@ -3,8 +3,7 @@
 /**
  * @author Carlos García Cachón, mejorado por Alvaro Cordero
  * @version 1.0
- * @since 15/01/2024
- * @copyright Todos los derechos reservados a Carlos García
+ * @since 20/01/2024
  * 
  * @Annotation Proyecto LoginLogoutMulticapaPOO - Parte de 'cInicioPrivado' 
  * 
@@ -35,6 +34,21 @@ if (isset($_REQUEST['detalle'])) {
     //Finalizo la ejecucion del script
     exit;
 }
+
+
+//Si el usuario pulsa el botón 'Editar Perfil', mando al usuario al index de DWES
+if(isset($_REQUEST['editarPerfil'])){
+
+    // Asigno a la página en curso la pagina de miCuenta
+    $_SESSION['paginaEnCurso'] = 'miCuenta'; 
+
+    // Redirecciono al index de la APP
+    header('Location: index.php'); 
+
+    //Finalizo la ejecucion del script
+    exit;
+}
+
 
 /*
  * Guardamos los datos de la sesion en variables
