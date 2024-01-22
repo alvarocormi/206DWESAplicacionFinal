@@ -1,9 +1,8 @@
 <?php
 /**
- * @author Carlos García Cachón
+ * @author Carlos García Cachón, mejorado por Alvaro Cordero
  * @version 1.0
  * @since 04/01/2024
- * @copyright Todos los derechos reservados a Carlos García
  * 
  * @Annotation Proyecto LoginLogoutMulticapaPOO - Parte de 'cMiCuenta'
  * 
