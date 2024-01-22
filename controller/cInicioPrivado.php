@@ -50,6 +50,22 @@ if(isset($_REQUEST['editarPerfil'])){
 }
 
 
+
+//Si el usuario pulsa el botón 'REST', mando al usuario al index de REST
+if(isset($_REQUEST['rest'])){
+
+    // Asigno a la página en curso la pagina de miCuenta
+    $_SESSION['paginaEnCurso'] = 'rest'; 
+
+    // Redirecciono al index de la APP
+    header('Location: index.php'); 
+
+    //Finalizo la ejecucion del script
+    exit;
+}
+
+
+
 /*
  * Guardamos los datos de la sesion en variables
  * Todos estos datos los cogemos del objeto usuario
