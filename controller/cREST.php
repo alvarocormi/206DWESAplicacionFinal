@@ -1,13 +1,19 @@
 <?php
 
 /**
- * @author  Alvaro Cordero
+ * @author  CrsitinaSauces, mejorado Alvaro Cordero
  * @version 1.0
  * @since 14/01/2024
  * 
- * @Annotation Proyecto LoginLogoutMulticapaPOO - Parte de 'crest'
+ * @Annotation Proyecto LoginLogoutMulticapaPOO - Parte de 'cRest'
  * 
  */
+
+ //Inicializamos las variables a null
+$Nasa = null;
+$explicacion = null;
+$imagen = null;
+$title = null;
 
 // Si el usuario no se ha logueado
 if (!isset($_SESSION['usuario'])) {
@@ -22,8 +28,8 @@ if (!isset($_SESSION['usuario'])) {
 //Si el usuario pulsa el boton de volver
 if (isset($_REQUEST['volver'])) {
 
-    //Cargamos PaginaAnterior de inicio en PaginaenCurso
-    $_SESSION['paginaEnCurso'] = $_SESSION['paginaAnterior'];
+    //Cargamos PaginaAnterior de inicio a inicioPrivado
+    $_SESSION['paginaEnCurso'] = 'inicioPrivado';
 
     //Redirigimos al usuario al programa de nuevo
     header('Location: index.php');
@@ -32,23 +38,24 @@ if (isset($_REQUEST['volver'])) {
     exit;
 }
 
-//Guardamos la informacion de la api en una variable
-$Nasa = REST::pedirFotoNasa();
 
-//Guardamos el texto en una variable
-$explicacion = $Nasa['explanation'];
+if (isset($_REQUEST['nasa'])) {
 
-//Guardamos la url de la imagen en una variable
-$imagen = $Nasa['hdurl'];
+    //Guardamos la informacion de la api en una variable
+    $Nasa = REST::pedirFotoNasa($_REQUEST['fecha']);
 
-//Gurdamos el titulo en una variable
-$title  = $Nasa['title'];
+    //Guardamos el texto en una variable
+    $explicacion = $Nasa['explanation'];
+
+    //Guardamos la url de la imagen en una variable
+    $imagen = $Nasa['hdurl'];
+
+    //Gurdamos el titulo en una variable
+    $title  = $Nasa['title'];
+}
 
 
 
-
-// Asigno a la página en curso la pagina de inicioPrivado
-$_SESSION['paginaEnCurso'] = 'rest';
 
 // Cargo la vista de 'WIP'
 require_once $aVistas['layout'];

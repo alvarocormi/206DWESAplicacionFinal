@@ -12,11 +12,11 @@
 
 class REST
 {
-    public static function pedirFotoNasa()
+    public static function pedirFotoNasa($fecha)
     {
         try {
             // obtenemos el resultado del servidor del api rest
-            $resultado = file_get_contents("https://api.nasa.gov/planetary/apod?api_key=rAIYGgvhzNQg1Lxtpe90waf8orEmQPTrZrfdra14", true);
+            $resultado = file_get_contents("https://api.nasa.gov/planetary/apod?api_key=rAIYGgvhzNQg1Lxtpe90waf8orEmQPTrZrfdra14&date=$fecha", true);
 
             // si no obtenemos el resultado esperado
             if ($resultado == false) {

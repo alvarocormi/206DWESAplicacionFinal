@@ -1,17 +1,19 @@
 <title>Alvaro Cordero Miñambres - REST</title>
-<div style="position: absolute; top: 30%; left: 50%; transform: translate(-50%, -50%); box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.05);">
-    <div style="width: 400px; height: 440px; background-color: white; text-align: center; position: relative; display: flex; flex-direction: column; min-width: 0; word-wrap: break-word; background-color: #fff; background-clip: border-box; border: 1px solid rgba(0, 0, 0, 0.125); border-radius: 5px; box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075)">
+<div style="position: absolute; top: 32%; left: 50%; transform: translate(-50%, -50%);">
+    <div style="width: 100%; height: 440px; text-align: justify; position: relative; display: flex; flex-direction: column; min-width: 0; word-wrap: break-word;">
         <form name="formulario1" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" ">
         <fieldset class=" nasa">
-            <legend>Foto del dia de la nasa</legend>
+            <legend>
+                <h2>Foto del dia de la nasa</h2>
+            </legend>
+            <input type="date" name="fecha" max=<?php $hoy=date("Y-m-d"); echo $hoy;?>>
+            <input type="submit" value="Aceptar" name="nasa" >
             <p><b>Descripcion:</b> <?php echo $explicacion; ?></p>
             <p><b>Titulo de la Imagen:</b> <?php echo $title; ?></p>
-            <img src="<?php echo $imagen; ?>" width="400px" />
+            <img src="<?php echo $imagen; ?>" width="300px" height="300px" />
             </fieldset>
-
+            <input style=" margin-right: 10px; margin-top: 45px; width: 25%; height: 50px; border: 1px solid; background: black; border-radius: 5px; font-size: 18px; color: white; font-weight: 500; cursor: pointer; outline: none;" type="submit" value="Volver" name="volver">
         </form>
     </div>
 </div>
-</div>
-
 </html>
