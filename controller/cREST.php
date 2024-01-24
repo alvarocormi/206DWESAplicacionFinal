@@ -25,18 +25,6 @@ if (!isset($_SESSION['usuario'])) {
     exit;
 }
 
-//Si el usuario pulsa el boton de volver
-if (isset($_REQUEST['volver'])) {
-
-    //Cargamos PaginaAnterior de inicio a inicioPrivado
-    $_SESSION['paginaEnCurso'] = 'inicioPrivado';
-
-    //Redirigimos al usuario al programa de nuevo
-    header('Location: index.php');
-
-    //Finalizamos la ejecuion del script
-    exit;
-}
 
 
 if (isset($_REQUEST['nasa'])) {
@@ -52,10 +40,34 @@ if (isset($_REQUEST['nasa'])) {
 
     //Gurdamos el titulo en una variable
     $title  = $Nasa['title'];
+
+} else {
+
+    //Si no pulsa el boton aceptar le pondrsmos la fecha de hoy
+    $Nasa = REST::pedirFotoNasa(date('Y-m-d'));
+
+     //Guardamos el texto en una variable
+     $explicacion = $Nasa['explanation'];
+
+     //Guardamos la url de la imagen en una variable
+     $imagen = $Nasa['hdurl'];
+ 
+     //Gurdamos el titulo en una variable
+     $title  = $Nasa['title'];
 }
 
 
+//Guardo la informacion de la api en una variable
+$github = REST::gitHub();
 
 
-// Cargo la vista de 'WIP'
+//Y muestro los siguientes datos
+$name = $github['name'];
+$avatar_url = $github['avatar_url'];
+$company = $github['company'];
+$bio = $github['bio'];
+$public_repos = $github['public_repos'];
+
+
+// Cargo la vista de 'layout'
 require_once $aVistas['layout'];

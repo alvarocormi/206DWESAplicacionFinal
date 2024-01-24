@@ -30,7 +30,6 @@ class REST
 
             //devolvemos un array con los datos que queremos devolver
             return $aNasa;
-            
         } catch (Exception $excepcion) {
 
             //Asignamos a un array el mensaje de error de la excepcion
@@ -39,5 +38,32 @@ class REST
             // devolvemos el array con el mensaje de error
             return $aRespuesta;
         }
+    }
+
+    public static function gitHub()
+    {
+        // Configura el encabezado User-Agent
+        $options = [
+            'http' => [
+                'header' => "User-Agent: MiAplicacion\r\n",
+                'method' => 'GET',
+            ],
+        ];
+
+        // Crea el contexto de la solicitud
+        $context = stream_context_create($options);
+
+        // Realiza la solicitud a la API de GitHub
+        $response = file_get_contents('https://api.github.com/users/alvarocormi', false, $context);
+
+        // Verifica si la solicitud fue exitosa
+        if ($response === FALSE) {
+            die('Error al realizar la solicitud a la API de GitHub');
+        }
+
+        // Decodifica la respuesta JSON
+        $aRepos = json_decode($response, true);
+
+        return $aRepos;
     }
 }
