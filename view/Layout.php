@@ -52,6 +52,7 @@
 </body>
 <footer class="d-flex flex-wrap justify-content-sm-between align-items-center my-2">
     <div class="col-md-5 d-flex align-items-center gap-3" style="margin-left: 45px; font-size: 0.84rem; text-transform: uppercase;">
+        <a class="mb-3 mb-md-0 text-body-primary" style="padding-right: 15px;" href="https://europa.eu/europass/eportfolio/api/eprofile/shared-profile/%C3%A1lvaro+-cordero+mi%C3%B1ambres/321e79ba-b041-4a91-85a0-77f730100e49?view=html" target="_blank">CURRICULUM</a>
         <a class="mb-3 mb-md-0 text-body-primary" style="padding-right: 15px;" href="https://www.bershka.com/es/h-man.html" target="_blank">IMITACION</a>
         <a class="mb-3 mb-md-0 text-body-secondary" style="padding-right: 15px;" href="\206DWESAplicacionFinal\doc\230129DiagramaDeCasosDeUso.pdf" target="_blank">Uso</a>
         <a class="mb-3 mb-md-0 text-body-secondary" href="\206DWESAplicacionFinal\doc\230129CatalogoDeRequisitos.pdf" target="_blank">Requisitos<a>
