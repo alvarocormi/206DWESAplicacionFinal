@@ -139,8 +139,9 @@ button {
   background-image: url("../img/archivosApp.png");
 }
 
-.textCard h2 {
+.textCard a {
   font-size: 3.5rem;
+  transition: all 0.3s ease;
   letter-spacing: 4px;
   font-family: "Raleway", sans-serif;
   font-weight: 300;
@@ -171,11 +172,12 @@ button {
   width: 469px;
   height: 80px;
   font-size: 1.7rem;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(5px);
 }
 
-.textCard:hover {
-  display: none;
+.textCard a:hover {
+  transition:0.3s ease-out;
+  font-size: 4.0rem;
 }
 
 footer {
