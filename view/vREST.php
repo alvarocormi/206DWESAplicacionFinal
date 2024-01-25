@@ -25,6 +25,6 @@
 
     </div>
 </div>
-<form name="formulario" action="<?php echo $_SERVER['PHP_SELF']; ?> method="post">
+<form name="formulario" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
         <input style=" margin-right: 10px; margin-top: 65px; width: 10%; height: 50px; border: 1px solid; background: black; border-radius: 5px; font-size: 18px; color: white; font-weight: 500; cursor: pointer; outline: none; display: block; margin-left: 45%;" type="submit" value="Volver" name="volver">
 </form>

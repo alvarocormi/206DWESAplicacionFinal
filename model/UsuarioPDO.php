@@ -8,10 +8,21 @@
  * @Annotation Proyecto LoginLogoutMulticapaPOO - Clase Usuario
  * 
  */
-// Definición de la clase UsuarioPDO que implementa la interfaz UsuarioDB
+
+/**
+ * UsuarioPDO
+ */
 class UsuarioPDO implements UsuarioDB {
 
-    // Método estático para validar un usuario en la base de datos
+    /**
+     * validarUsuario
+     *  
+     * Método estático para validar un usuario en la base de datos   
+     * 
+     * @param  mixed $codUsuario
+     * @param  mixed $password
+     * @return void
+     */
     public static function validarUsuario($codUsuario, $password) {
         
         // Inicializa la variable para almacenar el objeto Usuario
@@ -52,8 +63,15 @@ class UsuarioPDO implements UsuarioDB {
         // Devuelve el objeto Usuario, que puede ser null si la autenticación falla
         return $oUsuario;
     }
-
-    // Método estático para registrar la última conexión de un usuario en la base de datos
+    
+    /**
+     * registrarUltimaConexion
+     * 
+     * Método estático para registrar la última conexión de un usuario en la base de datos
+     *
+     * @param  mixed $oUsuario
+     * @return void
+     */
     public static function registrarUltimaConexion($oUsuario) {
         
         // Actualiza el número de accesos y la fecha de última conexión anterior en el objeto Usuario
@@ -74,6 +92,7 @@ class UsuarioPDO implements UsuarioDB {
         return $oUsuario;
     }
 
+    
     /**
      * Mediante este metodo podremos dar de alta a un usuario en nuestra base de datos
      * Es decir realizar una consulta de insercion pasandole los siguientes parametros

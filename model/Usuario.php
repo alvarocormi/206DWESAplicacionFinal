@@ -9,7 +9,9 @@
  * 
  */
 
-// Definición de la clase Usuario
+/**
+ * Usuario
+ */
 class Usuario {
 
     // Propiedades privadas para almacenar información del usuario
@@ -21,7 +23,18 @@ class Usuario {
     private $fechaHoraUltimaConexionAnterior;
     private $perfil;
 
-    // Constructor de la clase que inicializa las propiedades con los valores proporcionados
+    /**
+     * __construct
+     *
+     * @param  mixed $codUsuario
+     * @param  mixed $password
+     * @param  mixed $descUsuario
+     * @param  mixed $numAcceso
+     * @param  mixed $fechaHoraUltimaConexion
+     * @param  mixed $fechaHoraUltimaConexionAnterior
+     * @param  mixed $perfil
+     * @return void
+     */
     public function __construct($codUsuario, $password, $descUsuario, $numAcceso, $fechaHoraUltimaConexion, $fechaHoraUltimaConexionAnterior, $perfil) {
         $this->codUsuario = $codUsuario;
         $this->password = $password;
@@ -32,7 +45,6 @@ class Usuario {
         $this->perfil = $perfil;
     }
 
-    // Métodos de obtención (getters) para acceder a las propiedades privadas
 
     /**
      * Obtiene el código del usuario.

@@ -27,6 +27,22 @@ if (!isset($_SESSION['usuario'])) {
 
 
 
+// Si el usuario pulsa el boton de volver
+if (isset($_REQUEST['volver'])) {
+
+    // Establece la variable de sesión 'paginaEnCurso' en 'inicioPrivado'
+    $_SESSION['paginaEnCurso'] = 'inicioPrivado';
+
+    // Redirecciono al index de la APP
+    header('Location: index.php'); 
+
+    //Finalizo la ejecucion del script
+    exit;
+
+}
+
+
+
 if (isset($_REQUEST['nasa'])) {
 
     //Guardamos la informacion de la api en una variable

@@ -9,9 +9,17 @@
  * 
  */
 
-
+/**
+ * REST
+ */
 class REST
-{
+{    
+    /**
+     * pedirFotoNasa
+     *
+     * @param  mixed $fecha
+     * @return void
+     */
     public static function pedirFotoNasa($fecha)
     {
         try {
@@ -39,7 +47,12 @@ class REST
             return $aRespuesta;
         }
     }
-
+    
+    /**
+     * gitHub
+     *
+     * @return void
+     */
     public static function gitHub()
     {
         // Configura el encabezado User-Agent

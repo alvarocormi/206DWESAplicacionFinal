@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;900&family=Poppins:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 
 * {
   margin: 0;
@@ -45,7 +46,7 @@ header ul > li:nth-child(1) {
 }
 
 header ul > li:nth-child(3) {
-  margin-right: 80px;
+  margin-right: 75px;
 }
 
 .title {
@@ -101,6 +102,82 @@ button {
   font-weight: 600;
 }
 
+.cartas {
+  height: 842px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  position: absolute;
+  background-color: white;
+}
+
+.carta {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 471px;
+  height: 638px;
+  color: black;
+  border: 1px solid grey;
+}
+
+.carta:nth-child(1) {
+  background-image: url("../img/DiagramaClases.png");
+}
+
+.carta:nth-child(2) {
+  background-image: url("../img/esquemaAPP.png");
+}
+
+.carta:nth-child(3) {
+  background-image: url("../img/archivosApp.png");
+}
+
+.textCard h2 {
+  font-size: 3.5rem;
+  letter-spacing: 4px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+}
+
+.textCard p {
+  font-family: "Raleway", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 300;
+}
+
+.textCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 469px;
+  height: 636px;
+  backdrop-filter: blur(10px);
+}
+
+.ver {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 469px;
+  height: 80px;
+  font-size: 1.7rem;
+  backdrop-filter: blur(10px);
+}
+
+.textCard:hover {
+  display: none;
+}
+
 footer {
-	height: 48px;
+  height: 52px;
 }
