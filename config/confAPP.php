@@ -19,6 +19,8 @@ require_once 'model/Usuario.php';
 require_once 'model/UsuarioDB.php';
 require_once 'model/UsuarioPDO.php';
 require_once 'model/REST.php';
+require_once 'model/Departamento.php';
+require_once 'model/DepartamentoPDO.php';
 
 //Creamos un array asociativo para añadir los controladores
 $aControladores = [
@@ -31,7 +33,8 @@ $aControladores = [
     'registro' => 'controller/cRegistro.php',
     'miCuenta' => 'controller/cMiCuenta.php',
     'rest' => 'controller/cREST.php',
-    'borrarCuenta' => 'controller/cBorrarCuenta.php'
+    'borrarCuenta' => 'controller/cBorrarCuenta.php',
+    'consultarDepartamento' => 'controller/cMtoDepartamento.php'
 
 ];
 
@@ -47,5 +50,6 @@ $aVistas = [
     'registro' => 'view/vRegistro.php',
     'miCuenta' => 'view/vMiCuenta.php',
     'rest' => 'view/vREST.php',
-    'borrarCuenta' => 'view/vBorrarCuenta.php'
+    'borrarCuenta' => 'view/vBorrarCuenta.php',
+    'consultarDepartamento' => 'view/vMtoDepartamento.php'
 ];

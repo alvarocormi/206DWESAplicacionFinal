@@ -177,10 +177,50 @@ button {
 }
 
 .textCard a:hover {
-  transition:0.2s ease-out;
+  transition: 0.2s ease-out;
   font-size: 3.8rem;
 }
 
 footer {
   height: 52px;
+}
+
+/*MTO DEPARTAMENTOS*/
+
+.formulario {
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+}
+
+.tablas {
+  padding-top: 40px;
+  margin-top: 50px;
+  width: 50%;
+  margin: auto;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.botonsMTO {
+  display: flex;
+  position: absolute;
+  bottom: 80px;
+  left: 48%;
+  justify-content: center;
+}
+
+.botonsMTO input {
+  display: block;
+  width: 130px;
+  height: 55px;
+  border: 1px solid;
+  background: black;
+  border-radius: 5px;
+  font-size: 18px;
+  color: white;
+  font-weight: 400;
+  cursor: pointer;
+  outline: none;
 }

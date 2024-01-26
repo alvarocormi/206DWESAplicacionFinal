@@ -66,6 +66,21 @@ if(isset($_REQUEST['rest'])){
 
 
 
+//Si el usuario pulsa el botón 'Mto. Departamentos', mando al usuario al index de Mantenimiento de departamentos
+if(isset($_REQUEST['mtoDepartamentos'])){
+
+    // Asigno a la página en curso la pagina de consultarDepartamento
+    $_SESSION['paginaEnCurso'] = 'consultarDepartamento'; 
+
+    // Redirecciono al index de la APP
+    header('Location: index.php'); 
+
+    //Finalizo la ejecucion del script
+    exit;
+}
+
+
+
 /*
  * Guardamos los datos de la sesion en variables
  * Todos estos datos los cogemos del objeto usuario
@@ -81,6 +96,8 @@ $numeroConexionesUsuario = $_SESSION['usuario']->getNumAcceso();
 // Recupero y almaceno la fecha y hora de conexión anterior del usuario actual
 $fechaHoraUltimaConexionAnterior = $_SESSION['usuario']->getFechaHoraUltimaConexionAnterior(); 
 
+
+//COOKIES
 
 //Si la cookie seleccionada es la española
 if ($_COOKIE['idioma'] == 'es') {
