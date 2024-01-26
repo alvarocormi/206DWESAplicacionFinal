@@ -30,7 +30,8 @@ $aControladores = [
     'error' => 'controller/cError.php',
     'registro' => 'controller/cRegistro.php',
     'miCuenta' => 'controller/cMiCuenta.php',
-    'rest' => 'controller/cREST.php'
+    'rest' => 'controller/cREST.php',
+    'borrarCuenta' => 'controller/cBorrarCuenta.php'
 
 ];
 
@@ -45,5 +46,6 @@ $aVistas = [
     'error' => 'view/vError.php',
     'registro' => 'view/vRegistro.php',
     'miCuenta' => 'view/vMiCuenta.php',
-    'rest' => 'view/vREST.php'
+    'rest' => 'view/vREST.php',
+    'borrarCuenta' => 'view/vBorrarCuenta.php'
 ];

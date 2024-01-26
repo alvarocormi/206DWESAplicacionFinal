@@ -3,19 +3,19 @@
     <div class="carta">
         <div class="textCard">
             <p>IR A DIAGRAMA DE CLASES</p>
-            <a href="\206DWESAplicacionFinal\webroot\img\DiagramaClases.png" target="_blank">CLASES</a>
+            <a href="\206DWESAplicacionFinal\doc\230129DiagramaDeClases.pdf" target="_blank">CLASES</a>
         </div>
     </div>
     <div class="carta">
         <div class="textCard">
             <p>IR A ESQUEMA APP</p>
-            <a href="\206DWESAplicacionFinal\webroot\img\esquemaAPP.png" target="_blank">ESQUEMA</a>
+            <a href="\206DWESAplicacionFinal\doc\230129ArbolDeNavegación.pdf" target="_blank">ESQUEMA</a>
         </div>
     </div>
     <div class=" carta">
     <div class="textCard">
             <p>IR A ACHIVOS APP</p>
-            <a href="\206DWESAplicacionFinal\webroot\img\archivosApp.png" target="_blank">ARCHIVOS</a>
+            <a href="\206DWESAplicacionFinal\doc\230131RelacionDeFicheros.pdf" target="_blank">ARCHIVOS</a>
         </div>
     </div>
 </div>

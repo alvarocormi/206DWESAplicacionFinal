@@ -45,6 +45,8 @@ if (isset($_REQUEST['volver'])) {
 
 if (isset($_REQUEST['nasa'])) {
 
+    $_SESSION['fecha'] = $_REQUEST['fecha'];
+
     //Guardamos la informacion de la api en una variable
     $Nasa = REST::pedirFotoNasa($_REQUEST['fecha']);
 

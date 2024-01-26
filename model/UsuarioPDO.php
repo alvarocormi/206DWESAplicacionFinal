@@ -168,6 +168,25 @@ class UsuarioPDO implements UsuarioDB {
             return false;
         }
     }
+
+
+     /**
+     * Metodo que nos permite eliminar un usuario existente en la BD
+     * 
+     * @param string $codUsuario El código del usuario
+     * 
+     * @return bool True si el usuario se eliminó correctamente, False si hubo un error.
+     */
+    public static function borrarUsuario($codUsuario) {
+        //CONSULTA SQL - DELETE
+        $consultaEliminarUsuario = <<<CONSULTA
+            DELETE FROM T01_Usuario WHERE T01_CodUsuario = '{$codUsuario}';
+        CONSULTA;
+
+        //Devolvemos el resultado de la consulta
+        return DBPDO::ejecutaConsulta($consultaEliminarUsuario);
+    }
+
 }
 
 

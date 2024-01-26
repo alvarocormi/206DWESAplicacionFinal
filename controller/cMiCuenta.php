@@ -15,6 +15,32 @@ if(isset($_REQUEST['cambiarContraseña'])){
     exit;
 }
 
+//Si el usuario pulsa el botón 'Cambiar Contraseña', mando al usuario al index de DWES
+if(isset($_REQUEST['eliminarUsuario'])){ 
+
+     // Asigno a la página en curso la pagina de borrarCuenta
+    $_SESSION['paginaEnCurso'] = 'borrarCuenta';
+
+    // Redirecciono al index de la APP
+    header('Location: index.php'); 
+    exit;
+}
+
+
+//Si el usuario pulsa el botón 'Cancelar', mando al usuario al index de DWES
+if(isset($_REQUEST['cancelar'])){ 
+
+    // Asigno a la página en curso la pagina de inicioPrivado
+    $_SESSION['paginaEnCurso'] = 'inicioPrivado'; 
+
+    // Redirecciono al index de la APP
+    header('Location: index.php'); 
+
+    //Finalizao la ejecucion del script
+    exit;
+}
+
+
 // Declaracion de la variable de confirmación de envio de formulario correcto
 $entradaOK = true;
 
@@ -43,20 +69,6 @@ if ($entradaOK) {
     $_SESSION['paginaEnCurso'] = 'inicioPrivado'; // Asigno a la página en curso la pagina de inicioPrivado
     header('Location: index.php'); // Redirecciono al index de la APP
     exit; 
-}
-
-//Si el usuario pulsa el botón 'Cancelar', mando al usuario al index de DWES
-if(isset($_REQUEST['cancelar'])){ 
-    $_SESSION['paginaEnCurso'] = 'inicioPrivado'; // Asigno a la página en curso la pagina de inicioPrivado
-    header('Location: index.php'); // Redirecciono al index de la APP
-    exit;
-}
-
-//Si el usuario pulsa el botón 'Eliminar Usuario', mando al usuario al index de DWES
-if(isset($_REQUEST['eliminarUsuario'])){ 
-    $_SESSION['paginaEnCurso'] = 'wip'; // Asigno a la página en curso la pagina de borrarCuenta
-    header('Location: index.php'); // Redirecciono al index de la APP
-    exit;
 }
 
 // Almaceno...
