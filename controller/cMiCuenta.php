@@ -10,8 +10,14 @@
 
 //Si el usuario pulsa el botón 'Cambiar Contraseña', mando al usuario al index de DWES
 if(isset($_REQUEST['cambiarContraseña'])){ 
-    $_SESSION['paginaEnCurso'] = 'wip'; // Asigno a la página en curso la pagina de cambiarContraseña
-    header('Location: index.php'); // Redirecciono al index de la APP
+
+     // Asigno a la página en curso la pagina de cambiarContraseña
+    $_SESSION['paginaEnCurso'] = 'cambiarContraseña';
+
+    // Redirecciono al index de la APP
+    header('Location: index.php'); 
+
+    //Finalizo la ejecucion del script
     exit;
 }
 

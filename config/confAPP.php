@@ -34,7 +34,8 @@ $aControladores = [
     'miCuenta' => 'controller/cMiCuenta.php',
     'rest' => 'controller/cREST.php',
     'borrarCuenta' => 'controller/cBorrarCuenta.php',
-    'consultarDepartamento' => 'controller/cMtoDepartamento.php'
+    'consultarDepartamento' => 'controller/cMtoDepartamento.php',
+    'cambiarContraseña' => 'controller/cCambiarPassword.php'
 
 ];
 
@@ -51,5 +52,6 @@ $aVistas = [
     'miCuenta' => 'view/vMiCuenta.php',
     'rest' => 'view/vREST.php',
     'borrarCuenta' => 'view/vBorrarCuenta.php',
-    'consultarDepartamento' => 'view/vMtoDepartamento.php'
+    'consultarDepartamento' => 'view/vMtoDepartamento.php',
+    'cambiarContraseña' => 'view/vCambiarPassword.php'
 ];

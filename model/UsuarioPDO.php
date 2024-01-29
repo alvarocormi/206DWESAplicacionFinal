@@ -187,6 +187,37 @@ class UsuarioPDO implements UsuarioDB {
         return DBPDO::ejecutaConsulta($consultaEliminarUsuario);
     }
 
+
+     /**
+     * Metodo cambiarPassword()
+     * 
+     * Metodo que nos permite cambiar la password anterior por una nueva
+     * 
+     * @param object $oUsuario Objeto usuario
+     * @param string $password La password nueva
+     * 
+     * @return boolean Un objeto usuario si el usuario existe y se puede cambiar la password, de lo contrario un boolean a false
+     */
+    public static function cambiarPassword($oUsuario, $password){
+        //Consulta SQL para modificar la password de un usuario
+        $consultaModificarPassword = <<<CONSULTA
+            UPDATE T01_Usuario SET T01_Password=SHA2("{$oUsuario->getCodUsuario()}{$password}", 256) WHERE T01_CodUsuario="{$oUsuario->getCodUsuario()}";
+        CONSULTA;
+        
+        /*
+         * La siguente línea de código hago un hash con la nueva contraseña, para que cuando edite la 
+         * contraseña del objeto Usuario, no me la guarde en el objeto sin encriptar.
+         */
+        $hashPassword = hash("sha256", ($oUsuario->getCodUsuario() . $password)); 
+        $oUsuario->setPassword($hashPassword);
+        
+        if(DBPDO::ejecutaConsulta($consultaModificarPassword)){
+            return $oUsuario;
+        }else{
+            return false;
+        }
+    }
+
 }
 
 
