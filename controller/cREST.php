@@ -9,7 +9,7 @@
  * 
  */
 
- //Inicializamos las variables a null
+//Inicializamos las variables a null
 $Nasa = null;
 $explicacion = null;
 $imagen = null;
@@ -34,50 +34,54 @@ if (isset($_REQUEST['volver'])) {
     $_SESSION['paginaEnCurso'] = 'inicioPrivado';
 
     // Redirecciono al index de la APP
-    header('Location: index.php'); 
+    header('Location: index.php');
 
     //Finalizo la ejecucion del script
     exit;
-
 }
 
 
-
+//Si no le da al boton de enviar
 if (isset($_REQUEST['nasa'])) {
 
+    //Guardamos la fecha en la sesion
     $_SESSION['fecha'] = $_REQUEST['fecha'];
 
     //Guardamos la informacion de la api en una variable
     $Nasa = REST::pedirFotoNasa($_REQUEST['fecha']);
-
-    //Guardamos el texto en una variable
-    $explicacion = $Nasa['explanation'];
 
     //Guardamos la url de la imagen en una variable
     $imagen = $Nasa['hdurl'];
 
     //Gurdamos el titulo en una variable
     $title  = $Nasa['title'];
-
 } else {
 
     //Si no pulsa el boton aceptar le pondrsmos la fecha de hoy
     $Nasa = REST::pedirFotoNasa(date('Y-m-d'));
 
-     //Guardamos el texto en una variable
-     $explicacion = $Nasa['explanation'];
+    //Guardamos la url de la imagen en una variable
+    $imagen = $Nasa['hdurl'];
 
-     //Guardamos la url de la imagen en una variable
-     $imagen = $Nasa['hdurl'];
- 
-     //Gurdamos el titulo en una variable
-     $title  = $Nasa['title'];
+    //Gurdamos el titulo en una variable
+    $title  = $Nasa['title'];
 }
+
+
+//Si ha pulsado el boton de enviar
+if (isset($_REQUEST['traductor'])) {
+
+    //Guardamos en la sesion el texto introducido por el usuario
+    $_SESSION['texto'] = $_REQUEST['texto'];
+
+    //Guardamos la informacion de la api en una variable
+    $textTranslator = REST::textTranslator($_REQUEST['texto']);
+}
+
 
 
 //Guardo la informacion de la api en una variable
 $github = REST::gitHub();
-
 
 //Y muestro los siguientes datos
 $name = $github['name'];

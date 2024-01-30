@@ -13,7 +13,7 @@
  * REST
  */
 class REST
-{    
+{
     /**
      * pedirFotoNasa
      *
@@ -47,7 +47,7 @@ class REST
             return $aRespuesta;
         }
     }
-    
+
     /**
      * gitHub
      *
@@ -78,5 +78,58 @@ class REST
         $aRepos = json_decode($response, true);
 
         return $aRepos;
+    }
+
+
+    public static function textTranslator($texto)
+    {
+        // Inicia una nueva sesión y obtiene el manipulador cURL
+        $curl = curl_init();
+
+        // Configura opciones para la sesión cURL
+        curl_setopt_array($curl, [
+            CURLOPT_URL => "https://text-translator2.p.rapidapi.com/translate",
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "POST",
+            CURLOPT_POSTFIELDS => "source_language=es&target_language=en&text={$texto}",
+            CURLOPT_HTTPHEADER => [
+                "X-RapidAPI-Host: text-translator2.p.rapidapi.com",
+                "X-RapidAPI-Key: 4404276d16mshfb86423f9ab7fffp1ac8e6jsn6e13af741399",
+                "content-type: application/x-www-form-urlencoded"
+            ],
+        ]);
+
+        // Captura la URL y la envía al navegador
+        $response = curl_exec($curl);
+
+        // Verifica si hay errores en la solicitud cURL
+        if (curl_errno($curl)) {
+            echo 'Error cURL: ' . curl_error($curl);
+            // Puedes manejar el error de otra manera, como lanzar una excepción
+        }
+
+        // Cierra la sesión cURL
+        curl_close($curl);
+
+        // Decodifica la respuesta JSON
+        $data = json_decode($response, true);
+
+        // Verifica si la decodificación fue exitosa y si la clave "data" existe
+        if (json_last_error() === JSON_ERROR_NONE && isset($data['data'])) {
+
+            // Accede al valor de translatedText
+            $translatedText = $data['data']['translatedText'];
+
+            // Retorna el resultado
+            return $translatedText;
+        } else {
+            // Maneja el caso en que la decodificación falle o la clave "data" no exista
+            echo "Error al decodificar la cadena JSON o la clave 'data' no está definida.";
+            // Puedes manejar el error de otra manera, como lanzar una excepción
+        }
     }
 }
