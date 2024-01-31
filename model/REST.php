@@ -80,7 +80,13 @@ class REST
         return $aRepos;
     }
 
-
+    
+    /**
+     * textTranslator
+     *
+     * @param  mixed $texto
+     * @return void
+     */
     public static function textTranslator($texto)
     {
         // Inicia una nueva sesión y obtiene el manipulador cURL
@@ -88,17 +94,29 @@ class REST
 
         // Configura opciones para la sesión cURL
         curl_setopt_array($curl, [
+
+            //URL de la API
             CURLOPT_URL => "https://text-translator2.p.rapidapi.com/translate",
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => "",
             CURLOPT_MAXREDIRS => 10,
             CURLOPT_TIMEOUT => 30,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+
+            //Metodo que se ve a utilizar para realizar la peticion
             CURLOPT_CUSTOMREQUEST => "POST",
+
+            //Mensaje que se va a enviar en la peticion
             CURLOPT_POSTFIELDS => "source_language=es&target_language=en&text={$texto}",
+
             CURLOPT_HTTPHEADER => [
+                //Host de la API
                 "X-RapidAPI-Host: text-translator2.p.rapidapi.com",
+
+                //Key de la API
                 "X-RapidAPI-Key: 4404276d16mshfb86423f9ab7fffp1ac8e6jsn6e13af741399",
+
+                //Tipo de contenido
                 "content-type: application/x-www-form-urlencoded"
             ],
         ]);
