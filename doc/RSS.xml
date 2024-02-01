@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+    <channel>
+        <title>CANAL RSS</title>
+        <link>http://daw206.isauces.local/206DWESAplicacionFinal/index.php</link>
+        <description>Canal de actualizaciones de mi web</description>
+        <item>
+            <title>Mi primer ITEM en RSS</title>
+            <link>https://github.com/alvarocormi/206DWESAplicacionFinal</link>
+            <description>Ultima version de mi aplicacion final</description>
+        </item>
+    </channel>
+</rss>

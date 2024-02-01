@@ -56,8 +56,10 @@
         <a class="mb-3 mb-md-0 text-body-primary" style="padding-right: 15px;" href="https://www.bershka.com/es/h-man.html" target="_blank">IMITACION</a>
         <a class="mb-3 mb-md-0 text-body-secondary" style="padding-right: 15px;" href="\206DWESAplicacionFinal\doc\230129DiagramaDeCasosDeUso.pdf" target="_blank">Uso</a>
         <a class="mb-3 mb-md-0 text-body-secondary" href="\206DWESAplicacionFinal\doc\230129CatalogoDeRequisitos.pdf" target="_blank">Requisitos<a>
-                <a class="mb-3 mb-md-0 text-body-secondary" href="\206DWESAplicacionFinal\doc\230129EstandarDesarrolloDAWyEstructuraAlmacenamientoDWES.pdf" target="_blank">Almacenamiento<a>
-                        <a class="mb-3 mb-md-0 text-body-secondary" href="\206DWESAplicacionFinal\doc\220111UsoDeLaSessionParaLaAplicación.pdf" target="_blank">Sesion<a>
+        <a class="mb-3 mb-md-0 text-body-secondary" href="\206DWESAplicacionFinal\doc\ModeloFisicoDeDatos.pdf" target="_blank">Datos<a>
+        <a class="mb-3 mb-md-0 text-body-secondary" href="\206DWESAplicacionFinal\doc\230129EstandarDesarrolloDAWyEstructuraAlmacenamientoDWES.pdf" target="_blank">Almacenamiento<a>
+        <a class="mb-3 mb-md-0 text-body-secondary" href="\206DWESAplicacionFinal\doc\220111UsoDeLaSessionParaLaAplicación.pdf" target="_blank">Sesion<a>
+        <a class="mb-3 mb-md-0 text-body-secondary" href="\206DWESAplicacionFinal\doc\RSS.xml" target="_blank">RSS<a>
 
     </div>
     <ul class="nav col-md-4 justify-content-end list-unstyled d-flex" style="margin-right: 45px;">
