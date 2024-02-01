@@ -59,12 +59,13 @@
         <a class="mb-3 mb-md-0 text-body-secondary" href="\206DWESAplicacionFinal\doc\ModeloFisicoDeDatos.pdf" target="_blank">Datos<a>
         <a class="mb-3 mb-md-0 text-body-secondary" href="\206DWESAplicacionFinal\doc\230129EstandarDesarrolloDAWyEstructuraAlmacenamientoDWES.pdf" target="_blank">Almacenamiento<a>
         <a class="mb-3 mb-md-0 text-body-secondary" href="\206DWESAplicacionFinal\doc\220111UsoDeLaSessionParaLaAplicación.pdf" target="_blank">Sesion<a>
+        <a class="mb-3 mb-md-0 text-body-secondary" href="\206DWESAplicacionFinal\doc\index.html" target="_blank">PhpDoc<a>
         <a class="mb-3 mb-md-0 text-body-secondary" href="\206DWESAplicacionFinal\doc\RSS.xml" target="_blank">RSS<a>
 
     </div>
     <ul class="nav col-md-4 justify-content-end list-unstyled d-flex" style="margin-right: 45px;">
         <li class="ms-3">
-            <a class="text-body-secondary" href="./index.php">©Alvaro Cordero</a>
+            <a class="text-body-secondary" href="../../index.html">©Alvaro Cordero</a>
         </li>
         <li class="ms-3">
             <a class="text-body-secondary" href="https://github.com/alvarocormi/206DWESAplicacionFinal" target="_blank">
