@@ -63,8 +63,7 @@ class REST
      * gitHub
      *
      * @return void
-     */
-    public static function gitHub()
+     */ public static function gitHub()
     {
         // Configura el encabezado User-Agent
         $options = [
@@ -77,27 +76,37 @@ class REST
         // Crea el contexto de la solicitud
         $context = stream_context_create($options);
 
-        // Realiza la solicitud a la API de GitHub
-        $response = file_get_contents('https://api.github.com/users/alvarocormi', false, $context);
+        // Establece un manejador de errores personalizado para capturar la advertencia
+        set_error_handler(function ($errno, $errstr, $errfile, $errline) {
+            if (strpos($errstr, 'file_get_contents(https://api.github.com/users/alvarocormi)') !== false) {
+                throw new Exception('Error al realizar la solicitud a la API de GitHub');
+            }
+            return false;
+        });
 
-        // Verifica si la solicitud fue exitosa
-        if ($response === FALSE) {
-            die('Error al realizar la solicitud a la API de GitHub');
+        try {
+            // Realiza la solicitud a la API de GitHub
+            $response = file_get_contents('https://api.github.com/users/alvarocormi', false, $context);
+
+            // Verifica si la solicitud fue exitosa
+            if ($response === FALSE) {
+                echo('<p style="color: red;">Error al realizar la solicitud a la API de GitHub<p>');
+            }
+
+            // Decodifica la respuesta JSON
+            $aRepos = json_decode($response, true);
+
+            return $aRepos;
+        } catch (Exception $e) {
+            // Captura la excepción y muestra un mensaje al usuario
+            echo("<p style='color: red'>Error: " . $e->getMessage().'<p>');
+        } finally {
+            // Restaura el manejador de errores predeterminado
+            restore_error_handler();
         }
-
-        // Decodifica la respuesta JSON
-        $aRepos = json_decode($response, true);
-
-        return $aRepos;
     }
 
 
-    /**
-     * textTranslator
-     *
-     * @param  mixed $texto
-     * @return void
-     */
     public static function textTranslator($texto)
     {
         // Inicia una nueva sesión y obtiene el manipulador cURL
@@ -105,7 +114,6 @@ class REST
 
         // Configura opciones para la sesión cURL
         curl_setopt_array($curl, [
-
             //URL de la API
             CURLOPT_URL => "https://text-translator2.p.rapidapi.com/translate",
             CURLOPT_RETURNTRANSFER => true,
@@ -114,7 +122,7 @@ class REST
             CURLOPT_TIMEOUT => 30,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
 
-            //Metodo que se ve a utilizar para realizar la peticion
+            //Metodo que se va a utilizar para realizar la peticion
             CURLOPT_CUSTOMREQUEST => "POST",
 
             //Mensaje que se va a enviar en la peticion
@@ -153,8 +161,15 @@ class REST
             // Accede al valor de translatedText
             $translatedText = $data['data']['translatedText'];
 
-            // Retorna el resultado
-            return $translatedText;
+            // Verifica si la clave 'translatedText' está presente
+            if (isset($data['data']['translatedText'])) {
+                // Retorna el resultado
+                return $translatedText;
+            } else {
+                // Maneja el caso en el que la traducción no sea posible
+                echo "No se pudo traducir la palabra: $texto";
+                // Puedes manejar el error de otra manera, como lanzar una excepción
+            }
         } else {
             // Maneja el caso en que la decodificación falle o la clave "data" no exista
             echo "Error al decodificar la cadena JSON o la clave 'data' no está definida.";

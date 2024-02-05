@@ -55,16 +55,6 @@ if (isset($_REQUEST['nasa'])) {
 
     // Verificamos si la clave 'title' está definida antes de acceder
     $title = isset($Nasa['title']) ? $Nasa['title'] : '<p style="color: red;">No existe contenido en esa fecha<p>';
-} else {
-
-    //Si no pulsa el botón aceptar le pondremos la fecha de hoy
-    $Nasa = REST::pedirFotoNasa(date('Y-m-d'));
-
-    // Verificamos si la clave 'hdurl' está definida antes de acceder
-    $imagen = isset($Nasa['hdurl']) ? $Nasa['hdurl'] : null;
-
-    // Verificamos si la clave 'title' está definida antes de acceder
-    $title = isset($Nasa['title']) ? $Nasa['title'] : '<p style="color: red;">No existe contenido en esa fecha<p>';
 }
 
 
@@ -80,16 +70,19 @@ if (isset($_REQUEST['traductor'])) {
 
 
 
-//Guardo la informacion de la api en una variable
-$github = REST::gitHub();
+try {
+    // Guardo la informacion de la API en una variable
+    $github = REST::gitHub();
 
-//Y muestro los siguientes datos
-$name = $github['name'];
-$avatar_url = $github['avatar_url'];
-$company = $github['company'];
-$bio = $github['bio'];
-$public_repos = $github['public_repos'];
-
+    // Y muestro los siguientes datos después de verificar su existencia
+    $name = isset($github['name']) ? $github['name'] : null;
+    $avatar_url = isset($github['avatar_url']) ? $github['avatar_url'] : null;
+    $company = isset($github['company']) ? $github['company'] : null;
+    $bio = isset($github['bio']) ? $github['bio'] : null;
+    $public_repos = isset($github['public_repos']) ? $github['public_repos'] : null;
+} catch (Exception $e) {
+    echo "Se produjo un error al obtener datos de GitHub: " . $e->getMessage();
+}
 
 // Cargo la vista de 'layout'
 require_once $aVistas['layout'];
