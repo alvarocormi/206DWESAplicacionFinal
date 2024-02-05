@@ -41,30 +41,30 @@ if (isset($_REQUEST['volver'])) {
 }
 
 
-//Si no le da al boton de enviar
+//Si no le da al botón de enviar
 if (isset($_REQUEST['nasa'])) {
 
-    //Guardamos la fecha en la sesion
+    //Guardamos la fecha en la sesión
     $_SESSION['fecha'] = $_REQUEST['fecha'];
 
-    //Guardamos la informacion de la api en una variable
+    //Guardamos la información de la API en una variable
     $Nasa = REST::pedirFotoNasa($_REQUEST['fecha']);
 
-    //Guardamos la url de la imagen en una variable
-    $imagen = $Nasa['hdurl'];
+    // Verificamos si la clave 'hdurl' está definida antes de acceder
+    $imagen = isset($Nasa['hdurl']) ? $Nasa['hdurl'] : null;
 
-    //Gurdamos el titulo en una variable
-    $title  = $Nasa['title'];
+    // Verificamos si la clave 'title' está definida antes de acceder
+    $title = isset($Nasa['title']) ? $Nasa['title'] : '<p style="color: red;">No existe contenido en esa fecha<p>';
 } else {
 
-    //Si no pulsa el boton aceptar le pondrsmos la fecha de hoy
+    //Si no pulsa el botón aceptar le pondremos la fecha de hoy
     $Nasa = REST::pedirFotoNasa(date('Y-m-d'));
 
-    //Guardamos la url de la imagen en una variable
-    $imagen = $Nasa['hdurl'];
+    // Verificamos si la clave 'hdurl' está definida antes de acceder
+    $imagen = isset($Nasa['hdurl']) ? $Nasa['hdurl'] : null;
 
-    //Gurdamos el titulo en una variable
-    $title  = $Nasa['title'];
+    // Verificamos si la clave 'title' está definida antes de acceder
+    $title = isset($Nasa['title']) ? $Nasa['title'] : '<p style="color: red;">No existe contenido en esa fecha<p>';
 }
 
 
