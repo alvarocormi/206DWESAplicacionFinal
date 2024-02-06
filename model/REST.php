@@ -22,7 +22,9 @@ class REST
      */
     public static function pedirFotoNasa($fecha)
     {
+        //Abrimos un bloque try catch para el control de errores
         try {
+
             // Configuramos el contexto para manejar errores HTTP
             $context = stream_context_create(['http' => ['ignore_errors' => true]]);
 
@@ -31,7 +33,7 @@ class REST
 
             // Verificamos si hay errores HTTP
             if ($resultado === false) {
-                throw new Exception("Error en la conexión con el servidor, vuelva a intentarlo más tarde");
+                echo 'Error en la conexión con el servidor, vuelva a intentarlo más tarde';
             }
 
             // Almacenamos el array devuelto por json_decode
@@ -39,12 +41,16 @@ class REST
 
             // Verificamos errores en json_decode
             if (json_last_error() !== JSON_ERROR_NONE) {
-                throw new Exception("Error al decodificar la respuesta JSON de la API");
+                echo 'Error al decodificar el archivo JSON';
             }
 
             // Verificamos si la API devuelve un error
             if (isset($aNasa['error'])) {
-                throw new Exception("Error en la respuesta de la API: {$aNasa['error']['msg']}");
+                if (isset($aNasa['error']['msg'])) {
+                    echo 'Error en la conexión con la API';
+                } else {
+                    echo 'Error en la conexión con la API';
+                }
             }
 
             // Devolvemos un array con los datos que queremos devolver
@@ -79,7 +85,7 @@ class REST
         // Establece un manejador de errores personalizado para capturar la advertencia
         set_error_handler(function ($errno, $errstr, $errfile, $errline) {
             if (strpos($errstr, 'file_get_contents(https://api.github.com/users/alvarocormi)') !== false) {
-                throw new Exception('Error al realizar la solicitud a la API de GitHub');
+                $aErroresRest['errorGh'] = 'Ha habido un error al procesar la solicitud';
             }
             return false;
         });
@@ -90,7 +96,7 @@ class REST
 
             // Verifica si la solicitud fue exitosa
             if ($response === FALSE) {
-                echo('<p style="color: red;">Error al realizar la solicitud a la API de GitHub<p>');
+                echo ('<p style="color: red;">Error al realizar la solicitud a la API de GitHub<p>');
             }
 
             // Decodifica la respuesta JSON
@@ -99,8 +105,9 @@ class REST
             return $aRepos;
         } catch (Exception $e) {
             // Captura la excepción y muestra un mensaje al usuario
-            echo("<p style='color: red'>Error: " . $e->getMessage().'<p>');
+            $aErroresRest['errorGh']= 'Error: ' . $e->getMessage();
         } finally {
+
             // Restaura el manejador de errores predeterminado
             restore_error_handler();
         }
@@ -172,8 +179,8 @@ class REST
             }
         } else {
             // Maneja el caso en que la decodificación falle o la clave "data" no exista
-            echo "Error al decodificar la cadena JSON o la clave 'data' no está definida.";
-            // Puedes manejar el error de otra manera, como lanzar una excepción
+            echo('La clave data no esta definida');
+            
         }
     }
 }

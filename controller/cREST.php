@@ -26,7 +26,6 @@ if (!isset($_SESSION['usuario'])) {
 }
 
 
-
 // Si el usuario pulsa el boton de volver
 if (isset($_REQUEST['volver'])) {
 
@@ -40,8 +39,22 @@ if (isset($_REQUEST['volver'])) {
     exit;
 }
 
+//Si no hay nada guardado en la variable de sesion de la fecha
+if (!isset($_SESSION['fecha'])) {
 
-//Si no le da al botón de enviar
+    //Guardamos la fecha actual
+    $_SESSION['fecha'] = date('Y-m-d');
+}
+
+//Si no hay nada guardado en la variable de sesion de texto
+if (!isset($_SESSION['texto'])) {
+
+    //Dejamos el texto vacio
+    $_SESSION['texto'] = ' ';
+}
+
+
+//Si le da al botón de enviar
 if (isset($_REQUEST['nasa'])) {
 
     //Guardamos la fecha en la sesión
@@ -54,7 +67,18 @@ if (isset($_REQUEST['nasa'])) {
     $imagen = isset($Nasa['hdurl']) ? $Nasa['hdurl'] : null;
 
     // Verificamos si la clave 'title' está definida antes de acceder
-    $title = isset($Nasa['title']) ? $Nasa['title'] : '<p style="color: red;">No existe contenido en esa fecha<p>';
+    $title = isset($Nasa['title']) ? $Nasa['title'] : null;
+
+//Si todavia no le ha dado al boton de enviar
+} else {
+    //Si no pulsa el boton aceptar le pondrsmos la fecha de hoy
+    $Nasa = REST::pedirFotoNasa(date('Y-m-d'));
+
+    // Verificamos si la clave 'hdurl' está definida antes de acceder
+    $imagen = isset($Nasa['hdurl']) ? $Nasa['hdurl'] : null;
+
+    // Verificamos si la clave 'title' está definida antes de acceder
+    $title = isset($Nasa['title']) ? $Nasa['title'] : null;
 }
 
 
@@ -69,7 +93,7 @@ if (isset($_REQUEST['traductor'])) {
 }
 
 
-
+//Abrimos un bloque try catch para el control de errores
 try {
     // Guardo la informacion de la API en una variable
     $github = REST::gitHub();
@@ -80,7 +104,11 @@ try {
     $company = isset($github['company']) ? $github['company'] : null;
     $bio = isset($github['bio']) ? $github['bio'] : null;
     $public_repos = isset($github['public_repos']) ? $github['public_repos'] : null;
+
+   //Capturamos los errores 
 } catch (Exception $e) {
+
+    //Mostramos un mensaje de error
     echo "Se produjo un error al obtener datos de GitHub: " . $e->getMessage();
 }
 
