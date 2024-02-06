@@ -28,33 +28,57 @@ class REST
             // Configuramos el contexto para manejar errores HTTP
             $context = stream_context_create(['http' => ['ignore_errors' => true]]);
 
-            // obtenemos el resultado del servidor del api rest
-            $resultado = file_get_contents("https://api.nasa.gov/planetary/apod?api_key=rAIYGgvhzNQg1Lxtpe90waf8orEmQPTrZrfdra14&date=$fecha", false, $context);
+            //Obtenemos la url de la API
+            $url = "https://api.nasa.gov/planetary/apod?api_key=rAIYGgvhzNQg1Lxtpe90waf8orEmQPTrZrfdra14&date=$fecha";
 
-            // Verificamos si hay errores HTTP
-            if ($resultado === false) {
-                echo 'Error en la conexión con el servidor, vuelva a intentarlo más tarde';
-            }
+            // Realiza la solicitud y obtiene los encabezados de respuesta
+            $response_headers = get_headers($url);
 
-            // Almacenamos el array devuelto por json_decode
-            $aNasa = json_decode($resultado, true);
+            // Verifica si la respuesta contiene un código de estado 404
+            if (strpos($response_headers[0], '404') !== false) {
+                // Maneja el caso de error 404
+                return 'Recurso no encontrado';
+                         
+                //Si ha encontrado el recurso  
+            } else {
 
-            // Verificamos errores en json_decode
-            if (json_last_error() !== JSON_ERROR_NONE) {
-                echo 'Error al decodificar el archivo JSON';
-            }
+                // obtenemos el resultado del servidor del api rest
+                $resultado = file_get_contents($url, false, $context);
 
-            // Verificamos si la API devuelve un error
-            if (isset($aNasa['error'])) {
-                if (isset($aNasa['error']['msg'])) {
-                    echo 'Error en la conexión con la API';
-                } else {
-                    echo 'Error en la conexión con la API';
+                // Verificamos si hay errores HTTP
+                if ($resultado === false) {
+
+                    //Si hay un error devolvemos un mensaje
+                    return 'Error en la conexión con el servidor, vuelva a intentarlo más tarde';
+                    
                 }
-            }
 
-            // Devolvemos un array con los datos que queremos devolver
-            return $aNasa;
+                // Almacenamos el array devuelto por json_decode
+                $aNasa = json_decode($resultado, true);
+
+                // Verificamos errores en json_decode
+                if (json_last_error() !== JSON_ERROR_NONE) {
+
+                    //Mandamos un mensaje de error
+                    return 'Error al decodificar el archivo JSON';
+                }
+
+                // Verificamos si la API devuelve un error
+                if (isset($aNasa['error'])) {
+
+                    //Si devuleve un error
+                    if (isset($aNasa['error']['msg'])) {
+
+                        //Devolvemos un mensaje
+                        return 'Error en la conexión con la API';
+                    } else {
+                        return 'Error en la conexión con la API';
+                    }
+                }
+
+                // Devolvemos un array con los datos que queremos devolver
+                return $aNasa;
+            }
         } catch (Exception $excepcion) {
             // Asignamos a un array el mensaje de error de la excepción
             $aRespuesta[0] = $excepcion->getMessage();
@@ -85,7 +109,7 @@ class REST
         // Establece un manejador de errores personalizado para capturar la advertencia
         set_error_handler(function ($errno, $errstr, $errfile, $errline) {
             if (strpos($errstr, 'file_get_contents(https://api.github.com/users/alvarocormi)') !== false) {
-                $aErroresRest['errorGh'] = 'Ha habido un error al procesar la solicitud';
+                return 'Ha habido un error al procesar la solicitud';
             }
             return false;
         });
@@ -96,7 +120,7 @@ class REST
 
             // Verifica si la solicitud fue exitosa
             if ($response === FALSE) {
-                echo ('<p style="color: red;">Error al realizar la solicitud a la API de GitHub<p>');
+                return 'Error al realizar la solicitud a la API de GitHub';
             }
 
             // Decodifica la respuesta JSON
@@ -104,8 +128,7 @@ class REST
 
             return $aRepos;
         } catch (Exception $e) {
-            // Captura la excepción y muestra un mensaje al usuario
-            $aErroresRest['errorGh']= 'Error: ' . $e->getMessage();
+            return 'Error: ' . $e->getMessage();
         } finally {
 
             // Restaura el manejador de errores predeterminado
@@ -152,8 +175,7 @@ class REST
 
         // Verifica si hay errores en la solicitud cURL
         if (curl_errno($curl)) {
-            echo 'Error cURL: ' . curl_error($curl);
-            // Puedes manejar el error de otra manera, como lanzar una excepción
+            return 'Error cURL: ' . curl_error($curl);
         }
 
         // Cierra la sesión cURL
@@ -174,13 +196,12 @@ class REST
                 return $translatedText;
             } else {
                 // Maneja el caso en el que la traducción no sea posible
-                echo "No se pudo traducir la palabra: $texto";
-                // Puedes manejar el error de otra manera, como lanzar una excepción
+                return "No se pudo traducir la palabra: $texto";
             }
+            
         } else {
             // Maneja el caso en que la decodificación falle o la clave "data" no exista
-            echo('La clave data no esta definida');
-            
+            return 'No has introducido ningun valor';
         }
     }
 }

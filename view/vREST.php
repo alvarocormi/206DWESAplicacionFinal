@@ -37,7 +37,7 @@
         <textarea cols=" 40" rows="10" style="width: 339px; height: 183px;" name="texto" ><?php echo $_SESSION['texto'] ?></textarea>
             <br>
             <input type="submit" style="margin-top: 10px;" value="Enviar" name="traductor">
-            <p><b>Traduccion:</b> <?php !isset($textTranslator) ? " " : print($textTranslator) ?></p>
+            <p><b>Traduccion:</b> <?php !isset($mensajeError) ? print($textTranslator) : print($mensajeError) ?></p>
         </form>
         <hr>
         <p style="margin-top: 20px;"><span style="font-weight: bold;">URL</span>: https://text-translator2.p.rapidapi.com/translate</p>
