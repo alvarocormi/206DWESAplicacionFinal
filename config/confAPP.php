@@ -35,7 +35,8 @@ $aControladores = [
     'rest' => 'controller/cREST.php',
     'borrarCuenta' => 'controller/cBorrarCuenta.php',
     'consultarDepartamento' => 'controller/cMtoDepartamento.php',
-    'cambiarContraseña' => 'controller/cCambiarPassword.php'
+    'cambiarContraseña' => 'controller/cCambiarPassword.php',
+    'editarDepartamento' => 'controller/cConsultarModificarDepartamento.php'
 
 ];
 
@@ -53,5 +54,6 @@ $aVistas = [
     'rest' => 'view/vREST.php',
     'borrarCuenta' => 'view/vBorrarCuenta.php',
     'consultarDepartamento' => 'view/vMtoDepartamento.php',
-    'cambiarContraseña' => 'view/vCambiarPassword.php'
+    'cambiarContraseña' => 'view/vCambiarPassword.php',
+    'editarDepartamento' => 'view/vConsultarModificarDepartamento.php'
 ];

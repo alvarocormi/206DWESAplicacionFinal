@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @author Carlos García Cachón, mejorado por Alvaro Cordero
+ * @author Carlos García Cachón
  * @version 1.0
  * @since 26/01/2024
  * 
@@ -17,6 +17,25 @@ if (isset($_REQUEST['salirDepartamentos'])) {
 
     // Asigno a la página en curso la página inicioPublico
     $_SESSION['paginaEnCurso'] = 'inicioPrivado';
+
+    // Redirecciono al index de la APP
+    header('Location: index.php');
+
+    //Finalizamos la ejecucion del script
+    exit;
+}
+
+// Estructura del botón editarDepartamento, si el usuario pulsa el botón del icono de un 'lapiz'
+if (isset($_REQUEST['cConsultarModificarDepartamento'])) {
+
+    // Almaceno en una variable de sesión el Codigo del Departamento Seleccionado
+    $_SESSION['codDepartamentoActual'] = $_REQUEST['cConsultarModificarDepartamento']; 
+
+     // Almaceno la página anterior para poder volver
+    $_SESSION['paginaAnterior'] = 'consultarDepartamento';
+
+    //Asignamos la pagina en curso a editarDepartamento
+    $_SESSION['paginaEnCurso'] = 'editarDepartamento'; 
 
     // Redirecciono al index de la APP
     header('Location: index.php');
