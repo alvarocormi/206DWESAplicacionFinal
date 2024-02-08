@@ -9,6 +9,8 @@
  * 
  */
 
+$text = null;
+
 $aVistaRest = [
     'nasa' => [],
 ];

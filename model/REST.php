@@ -65,8 +65,13 @@ class REST
 
         $data = json_decode($response, true);
 
-         // Accede al valor de translatedText
-         $translatedText = $data['data']['translatedText'];
+        // Verifica si la decodificación JSON fue exitosa
+        if ($data === null || !isset($data['data'])) {
+            return null;
+        }
+
+        // Accede al valor de translatedText
+        $translatedText = $data['data']['translatedText'];
 
         // Verifica si la clave 'translatedText' está presente
         if (isset($data['data']['translatedText'])) {
