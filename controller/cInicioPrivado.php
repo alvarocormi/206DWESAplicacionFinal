@@ -79,6 +79,20 @@ if(isset($_REQUEST['mtoDepartamentos'])){
     exit;
 }
 
+//Si el usuario pulsa el botón 'Mto. Preguntas', mando al usuario al index de Mantenimiento de preguntas
+if(isset($_REQUEST['mtoPreguntas'])){
+
+    // Asigno a la página en curso la pagina de consultarDepartamento
+    $_SESSION['paginaEnCurso'] = 'consultarPregunta'; 
+
+    // Redirecciono al index de la APP
+    header('Location: index.php'); 
+
+    //Finalizo la ejecucion del script
+    exit;
+}
+
+
 
 
 /*

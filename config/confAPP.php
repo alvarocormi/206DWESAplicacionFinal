@@ -21,6 +21,8 @@ require_once 'model/UsuarioPDO.php';
 require_once 'model/REST.php';
 require_once 'model/Departamento.php';
 require_once 'model/DepartamentoPDO.php';
+require_once 'model/Pregunta.php';
+require_once 'model/PreguntaPDO.php';
 
 //Creamos un array asociativo para añadir los controladores
 $aControladores = [
@@ -36,7 +38,9 @@ $aControladores = [
     'borrarCuenta' => 'controller/cBorrarCuenta.php',
     'consultarDepartamento' => 'controller/cMtoDepartamento.php',
     'cambiarContraseña' => 'controller/cCambiarPassword.php',
-    'editarDepartamento' => 'controller/cConsultarModificarDepartamento.php'
+    'editarDepartamento' => 'controller/cConsultarModificarDepartamento.php',
+    'tecnologias' => 'controller/cTecnologias.php',
+    'consultarPregunta' => 'controller/cMtoPregunta.php'
 
 ];
 
@@ -54,6 +58,8 @@ $aVistas = [
     'rest' => 'view/vREST.php',
     'borrarCuenta' => 'view/vBorrarCuenta.php',
     'consultarDepartamento' => 'view/vMtoDepartamento.php',
+    'consultarPregunta' => 'view/vMtoPregunta.php',
     'cambiarContraseña' => 'view/vCambiarPassword.php',
-    'editarDepartamento' => 'view/vConsultarModificarDepartamento.php'
+    'editarDepartamento' => 'view/vConsultarModificarDepartamento.php',
+    'tecnologias' => 'view/vTecnologias.php'
 ];

@@ -28,3 +28,13 @@ INSERT INTO T01_Usuario (
     ('amor', SHA2('amorpaso', 256), 'Amor Rodriguez Navarro', 'administrador'),
     ('antonio', SHA2('antoniopaso', 256), 'Antonio Jañez Velada', 'administrador'),
     ('alberto', SHA2('antoniopaso', 256), 'Alberto Bahillo Fernandez', 'administrador');
+
+-- Insertar fila 1
+INSERT INTO T08_Pregunta (T08_CodPregunta, T08_DescPregunta, T08_FechaAlta, T08_Respuesta, T08_AutorRespuesta, T08_Valor)
+VALUES 
+('001', '¿Cuál es la capital de Francia?', '2024-02-12 10:00:00', 'París', 'Admin1', 10),
+('002', '¿Quién escribió la Odisea?', '2024-02-12 10:05:00', 'Homero', 'Admin2', 8),
+('003', '¿En qué año comenzó la Primera Guerra Mundial?', '2024-02-12 10:10:00', '1914', 'Admin3', 9),
+('004', '¿Cuál es el símbolo químico del oro?', '2024-02-12 10:15:00', 'Au', 'Admin4', 7),
+('005', '¿Qué año se firmó la Declaración de Independencia de los Estados Unidos?', '2024-02-12 10:20:00', '1776', 'Admin5', 9);
+

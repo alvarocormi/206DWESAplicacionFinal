@@ -16,7 +16,7 @@ T01_CodUsuario varchar(8) primary key,
 T01_Password varchar(255),
 T01_DescUsuario varchar (255),
 T01_NumConexiones int,
-T01_FechaHoraUltimaConexion datetime default 0,
+T01_FechaHoraUltimaConexion datetime default null,
 T01_Perfil enum('usuario','administrador') default 'usuario',
 T01_ImagenUsuario blob)engine=innodb; 
 /*Blob es un tipo de dato que almacena un objeto binario grande que puede contener una cantidad variable de datos (mediumblob, blob, tinyblob)*/
@@ -28,6 +28,15 @@ T02_DescDepartamento varchar(255),
 T02_FechaCreacionDepartamento datetime,
 T02_VolumenDeNegocio float,
 T02_FechaBajaDepartamento datetime default null)engine=innodb;
+
+create table if not exists T08_Pregunta(
+T08_CodPregunta varchar(3) primary key,
+T08_DescPregunta varchar(255),
+T08_FechaAlta datetime,
+T08_Respuesta varchar(255),
+T08_AutorRespuesta varchar(255),
+T08_Valor integer,
+T08_FechaBaja datetime default null)engine=innodb;
 
 /*Creacion del usuario*/
 create user 'user206DWESLoginLogOffTema5'@'%' identified by 'P@ssw0rd';

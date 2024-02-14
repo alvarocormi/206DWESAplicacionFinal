@@ -52,15 +52,18 @@
 </body>
 <footer class="d-flex flex-wrap justify-content-sm-between align-items-center my-2">
     <div class="col-md-5 d-flex align-items-center gap-3" style="margin-left: 45px; font-size: 0.84rem; text-transform: uppercase;">
-        <a class="mb-3 mb-md-0 text-body-primary" style="padding-right: 15px;" href="https://europa.eu/europass/eportfolio/api/eprofile/shared-profile/%C3%A1lvaro+-cordero+mi%C3%B1ambres/321e79ba-b041-4a91-85a0-77f730100e49?view=html" target="_blank">CURRICULUM</a>
+        <a class="mb-3 mb-md-0 text-body-primary" style="padding-right: 15px;" href="\206DWESAplicacionFinal\doc\AlvaroCorderoMiñambres.pdf" target="_blank">CURRICULUM</a>
         <a class="mb-3 mb-md-0 text-body-primary" style="padding-right: 15px;" href="https://www.bershka.com/es/h-man.html" target="_blank">IMITACION</a>
+        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+            <input  class="mb-3 mb-md-0 text-body-secondary"type="submit" name="tecnologias" value="TECNOLOGIAS" style="background: none; border: none; padding-right: 15px;"></input>
+        </form>
         <a class="mb-3 mb-md-0 text-body-secondary" style="padding-right: 15px;" href="\206DWESAplicacionFinal\doc\230129DiagramaDeCasosDeUso.pdf" target="_blank">Uso</a>
         <a class="mb-3 mb-md-0 text-body-secondary" href="\206DWESAplicacionFinal\doc\230129CatalogoDeRequisitos.pdf" target="_blank">Requisitos<a>
-        <a class="mb-3 mb-md-0 text-body-secondary" href="\206DWESAplicacionFinal\doc\ModeloFisicoDeDatos.pdf" target="_blank">Datos<a>
-        <a class="mb-3 mb-md-0 text-body-secondary" href="\206DWESAplicacionFinal\doc\230129EstandarDesarrolloDAWyEstructuraAlmacenamientoDWES.pdf" target="_blank">Almacenamiento<a>
-        <a class="mb-3 mb-md-0 text-body-secondary" href="\206DWESAplicacionFinal\doc\220111UsoDeLaSessionParaLaAplicación.pdf" target="_blank">Sesion<a>
-        <a class="mb-3 mb-md-0 text-body-secondary" href="\206DWESAplicacionFinal\doc\index.html" target="_blank">PhpDoc<a>
-        <a class="mb-3 mb-md-0 text-body-secondary" href="\206DWESAplicacionFinal\doc\RSS.xml" target="_blank">RSS<a>
+                <a class="mb-3 mb-md-0 text-body-secondary" href="\206DWESAplicacionFinal\doc\ModeloFisicoDeDatos.pdf" target="_blank">Datos<a>
+                        <a class="mb-3 mb-md-0 text-body-secondary" href="\206DWESAplicacionFinal\doc\230129EstandarDesarrolloDAWyEstructuraAlmacenamientoDWES.pdf" target="_blank">Almacenamiento<a>
+                                <a class="mb-3 mb-md-0 text-body-secondary" href="\206DWESAplicacionFinal\doc\220111UsoDeLaSessionParaLaAplicación.pdf" target="_blank">Sesion<a>
+                                        <a class="mb-3 mb-md-0 text-body-secondary" href="\206DWESAplicacionFinal\doc\index.html" target="_blank">PhpDoc<a>
+                                                <a class="mb-3 mb-md-0 text-body-secondary" href="\206DWESAplicacionFinal\doc\RSS.xml" target="_blank">RSS<a>
 
     </div>
     <ul class="nav col-md-4 justify-content-end list-unstyled d-flex" style="margin-right: 45px;">

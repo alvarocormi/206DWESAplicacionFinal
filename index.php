@@ -22,5 +22,11 @@ if(!isset($_SESSION['paginaEnCurso'])){
     $_SESSION['paginaEnCurso'] = 'inicioPublico'; 
 }
 
+// Si desde el footer pulso el boton de tecnologias
+if(isset($_REQUEST['tecnologias'])){ 
+    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
+    $_SESSION['paginaEnCurso'] = 'tecnologias';
+}
+
 // Cargo la pagina en curso
 require_once $aControladores[$_SESSION['paginaEnCurso']]; 

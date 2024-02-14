@@ -1,6 +1,11 @@
 Search.appendIndex(
     [
                 {
+            "fqsen": "\\validarNIF\u0028\u0029",
+            "name": "validarNIF",
+            "summary": "",
+            "url": "namespaces/default.html#function_validarNIF"
+        },                {
             "fqsen": "\\DSN",
             "name": "DSN",
             "summary": "",
@@ -216,6 +221,16 @@ Search.appendIndex(
             "summary": "Realiza\u0020una\u0020consulta\u0020filtrando\u0020por\u0020descripcion\u0020de\u0020deparamentos\u0020y\u0020devuleve\u0020su\u0020resultado",
             "url": "classes/DepartamentoPDO.html#method_buscaDepartamentosPorDesc"
         },                {
+            "fqsen": "\\DepartamentoPDO\u003A\u003AbuscaDepartamentoPorCod\u0028\u0029",
+            "name": "buscaDepartamentoPorCod",
+            "summary": "Metodo\u0020que\u0020nos\u0020permite\u0020buscar\u0020un\u0020departamento\u0020por\u0020el\u0020c\u00F3digo",
+            "url": "classes/DepartamentoPDO.html#method_buscaDepartamentoPorCod"
+        },                {
+            "fqsen": "\\DepartamentoPDO\u003A\u003AmodificaDepartamento\u0028\u0029",
+            "name": "modificaDepartamento",
+            "summary": "Modifica\u0020los\u0020valores\u0020de\u0020un\u0020departamento",
+            "url": "classes/DepartamentoPDO.html#method_modificaDepartamento"
+        },                {
             "fqsen": "\\ErrorApp",
             "name": "ErrorApp",
             "summary": "",
@@ -273,18 +288,18 @@ Search.appendIndex(
         },                {
             "fqsen": "\\REST\u003A\u003ApedirFotoNasa\u0028\u0029",
             "name": "pedirFotoNasa",
-            "summary": "pedirFotoNasa",
+            "summary": "",
             "url": "classes/REST.html#method_pedirFotoNasa"
-        },                {
-            "fqsen": "\\REST\u003A\u003AgitHub\u0028\u0029",
-            "name": "gitHub",
-            "summary": "gitHub",
-            "url": "classes/REST.html#method_gitHub"
         },                {
             "fqsen": "\\REST\u003A\u003AtextTranslator\u0028\u0029",
             "name": "textTranslator",
-            "summary": "textTranslator",
+            "summary": "",
             "url": "classes/REST.html#method_textTranslator"
+        },                {
+            "fqsen": "\\REST\u003A\u003AapikeyNASA",
+            "name": "apikeyNASA",
+            "summary": "",
+            "url": "classes/REST.html#constant_apikeyNASA"
         },                {
             "fqsen": "\\Usuario",
             "name": "Usuario",
