@@ -13,7 +13,7 @@
 if (isset($_REQUEST['salirPreguntas'])) {
 
     // Almaceno la página anterior para poder volver
-    $_SESSION['paginaAnterior'] = 'consultarPreguntas';
+    $_SESSION['paginaAnterior'] = 'consultarPregunta';
 
     // Asigno a la página en curso la página inicioPublico
     $_SESSION['paginaEnCurso'] = 'inicioPrivado';
@@ -26,16 +26,16 @@ if (isset($_REQUEST['salirPreguntas'])) {
 }
 
 // Estructura del botón editarDepartamento, si el usuario pulsa el botón del icono de un 'lapiz'
-if (isset($_REQUEST['cConsultarPreguntas'])) {
+if (isset($_REQUEST['cConsultarModificarPregunta'])) {
 
     // Almaceno en una variable de sesión el Codigo del Departamento Seleccionado
     $_SESSION['codDepartamentoActual'] = $_REQUEST['cConsultarPreguntas']; 
 
      // Almaceno la página anterior para poder volver
-    $_SESSION['paginaAnterior'] = 'consultarPreguntas';
+    $_SESSION['paginaAnterior'] = 'consultarPregunta';
 
     //Asignamos la pagina en curso a editarDepartamento
-    $_SESSION['paginaEnCurso'] = 'editarPreguntas'; 
+    $_SESSION['paginaEnCurso'] = 'wip'; 
 
     // Redirecciono al index de la APP
     header('Location: index.php');
@@ -103,29 +103,29 @@ $aPreguntasBuscadas = PreguntaPDO::buscarPreguntaPorDesc($_SESSION['criterioBusq
 if ($aPreguntasBuscadas) {
 
     //Recorro el objeto del resultado que contiene un array
-    foreach ($aPreguntasBuscadas as $aPregunta) { 
+    foreach ($aPreguntasBuscadas as $oPregunta) { 
 
         //Hago uso del metodo array push para meter los valores en el array $aDepartamentosVista
         array_push($aPreguntasVista, [ 
 
             //Guardo en el valor codDepartamento el codigo del departamento
-            'codPregunta' => $aPregunta->getCodPregunta(), 
+            'codPregunta' => $oPregunta->getCodPregunta(), 
 
             //Guardo en el valor descDepartamento la descripcion del departamento
-            'descPregunta' => $aPregunta->getDescPregunta(), 
+            'descPregunta' => $oPregunta->getDescPregunta(), 
 
             //Guardo en el valor fechaAlta la fecha de alta del departamento
-            'fechaAltaPregunta' => $aPregunta->getFechaAlta(), 
+            'fechaAltaPregunta' => $oPregunta->getFechaAlta(), 
 
             //Guardo en el valor volumenNegocio el volumen de negocio del departamento
-            'respuestaPregunta' => $aPregunta->getRespuesta(), 
+            'respuestaPregunta' => $oPregunta->getRespuesta(), 
 
             //Guardo en el valor fechaBaja la fecha de baja del departamento
-            'autorRespuesta' => $aPregunta->getAutorRespuesta() ,
+            'autorRespuesta' => $oPregunta->getAutorRespuesta() ,
 
-            'valorRespuesta' => $aPregunta->getValor(),
+            'valorRespuesta' => $oPregunta->getValor(),
 
-            'fechaBajaRespuesta' => !is_null($aPregunta->getFechaBaja()) ? $aPregunta->getFechaBaja() : '' ,
+            'fechaBajaRespuesta' => !is_null($oPregunta->getFechaBaja()) ? $oPregunta->getFechaBaja() : '' ,
 
         ]);
 

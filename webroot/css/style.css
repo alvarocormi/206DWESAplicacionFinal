@@ -185,7 +185,7 @@ footer {
   height: 52px;
 }
 
-/*MTO DEPARTAMENTOS*/
+/*MANTENIMIENTOS*/
 
 .formulario {
   display: flex;
@@ -196,7 +196,7 @@ footer {
 .tablas {
   padding-top: 40px;
   margin-top: 50px;
-  width: 50%;
+  width: 70%;
   margin: auto;
   justify-content: center;
   display: flex;
@@ -223,4 +223,8 @@ footer {
   font-weight: 400;
   cursor: pointer;
   outline: none;
+}
+
+.buscarMTO  {
+  width: 100%;
 }

@@ -7,7 +7,7 @@
             La pagina a la que estas intentando acceder esta en mantenimiento
         </p>
         <form method="post" action="index.php">
-            <input type="submit" class="btn btn-primary" name="salirDeWIP" value="Go Home"></input>
+            <input type="submit" class="btn btn-primary" name="salirDeWIP" value="Volver"></input>
         </form>
     </div>
 </div>

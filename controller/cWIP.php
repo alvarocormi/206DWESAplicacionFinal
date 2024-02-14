@@ -12,7 +12,7 @@
 if(isset($_REQUEST['salirDeWIP'])){
     
     // Asigno a la página en curso la página inicioPublico
-    $_SESSION['paginaEnCurso'] = 'inicioPrivado'; 
+    $_SESSION['paginaEnCurso'] = $_SESSION['paginaAnterior']; 
     
     // Redirecciono al index de la APP
     header('Location: index.php');
