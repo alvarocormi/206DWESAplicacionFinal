@@ -40,7 +40,8 @@ $aControladores = [
     'cambiarContraseña' => 'controller/cCambiarPassword.php',
     'editarDepartamento' => 'controller/cConsultarModificarDepartamento.php',
     'tecnologias' => 'controller/cTecnologias.php',
-    'consultarPregunta' => 'controller/cMtoPregunta.php'
+    'consultarPregunta' => 'controller/cMtoPregunta.php',
+    'editarPregunta' => 'controller/cConsultarModificarPregunta.php',
 
 ];
 
@@ -61,5 +62,6 @@ $aVistas = [
     'consultarPregunta' => 'view/vMtoPregunta.php',
     'cambiarContraseña' => 'view/vCambiarPassword.php',
     'editarDepartamento' => 'view/vConsultarModificarDepartamento.php',
-    'tecnologias' => 'view/vTecnologias.php'
+    'tecnologias' => 'view/vTecnologias.php',
+    'editarPregunta' => 'view/vConsultarModificarPregunta.php',
 ];

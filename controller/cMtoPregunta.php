@@ -29,13 +29,13 @@ if (isset($_REQUEST['salirPreguntas'])) {
 if (isset($_REQUEST['cConsultarModificarPregunta'])) {
 
     // Almaceno en una variable de sesión el Codigo del Departamento Seleccionado
-    $_SESSION['codDepartamentoActual'] = $_REQUEST['cConsultarPreguntas']; 
+    $_SESSION['codPreguntaActual'] = $_REQUEST['cConsultarModificarPregunta']; 
 
      // Almaceno la página anterior para poder volver
     $_SESSION['paginaAnterior'] = 'consultarPregunta';
 
     //Asignamos la pagina en curso a editarDepartamento
-    $_SESSION['paginaEnCurso'] = 'wip'; 
+    $_SESSION['paginaEnCurso'] = 'editarPregunta'; 
 
     // Redirecciono al index de la APP
     header('Location: index.php');

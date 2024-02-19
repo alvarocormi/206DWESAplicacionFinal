@@ -2,10 +2,12 @@
 <div class="formulario">
     <form name="formulario" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" class="form-check-inline">
         <div>
-            <label for="DescDepartamento" style="margin-top: 5px;">Departamento: </label>
-            <input type="text" id="DescDepartamento" name="DescDepartamento" value="<?php echo $_SESSION['criterioBusquedaDepartamentos']['descripcionBuscada'] ?? ''; ?>">
-            <input type="submit" value="Buscar" name="buscarDepartamentoPorDesc">
-            <?php echo ($aErrores['DescDepartamento'] != null ? "<span style='color:red'>" . $aErrores['DescDepartamento'] . "</span>" : null); ?>
+            <div class="buscarMTO">
+                <label for="DescDepartamento" style="margin-top: 5px;">Departamento: </label>
+                <input type="text" id="DescDepartamento" name="DescDepartamento" value="<?php echo $_SESSION['criterioBusquedaDepartamentos']['descripcionBuscada'] ?? ''; ?>">
+                <input type="submit" value="Buscar" name="buscarDepartamentoPorDesc">
+                <?php echo ($aErrores['DescDepartamento'] != null ? "<span style='color:red'>" . $aErrores['DescDepartamento'] . "</span>" : null); ?>
+            </div>
             <div class="botonsMTO">
                 <input type="submit" value="Cancelar" name="salirDepartamentos">
             </div>

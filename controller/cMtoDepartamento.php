@@ -103,25 +103,25 @@ $aDepartamentosBuscados = DepartamentoPDO::buscaDepartamentosPorDesc($_SESSION['
 if ($aDepartamentosBuscados) {
 
     //Recorro el objeto del resultado que contiene un array
-    foreach ($aDepartamentosBuscados as $aDepartamento) { 
+    foreach ($aDepartamentosBuscados as $oDepartamento) { 
 
         //Hago uso del metodo array push para meter los valores en el array $aDepartamentosVista
         array_push($aDepartamentosVista, [ 
 
             //Guardo en el valor codDepartamento el codigo del departamento
-            'codDepartamento' => $aDepartamento->getCodDepartamento(), 
+            'codDepartamento' => $oDepartamento->getCodDepartamento(), 
 
             //Guardo en el valor descDepartamento la descripcion del departamento
-            'descDepartamento' => $aDepartamento->getDescDepartamento(), 
+            'descDepartamento' => $oDepartamento->getDescDepartamento(), 
 
             //Guardo en el valor fechaAlta la fecha de alta del departamento
-            'fechaCreacionDep' => $aDepartamento->getFechaCreacionDepartamento(), 
+            'fechaCreacionDep' => $oDepartamento->getFechaCreacionDepartamento(), 
 
             //Guardo en el valor volumenNegocio el volumen de negocio del departamento
-            'volumenDeNegocio' => $aDepartamento->getVolumenDeNegocio(), 
+            'volumenDeNegocio' => $oDepartamento->getVolumenDeNegocio(), 
 
             //Guardo en el valor fechaBaja la fecha de baja del departamento
-            'fechaBajaDep' => !is_null($aDepartamento->getFechaBajaDepartamento()) ? $aDepartamento->getFechaBajaDepartamento() : '' 
+            'fechaBajaDep' => !is_null($oDepartamento->getFechaBajaDepartamento()) ? $oDepartamento->getFechaBajaDepartamento() : '' 
         ]);
 
         //Incremento el contador

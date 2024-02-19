@@ -30,11 +30,17 @@ INSERT INTO T01_Usuario (
     ('alberto', SHA2('antoniopaso', 256), 'Alberto Bahillo Fernandez', 'administrador');
 
 -- Insertar fila 1
-INSERT INTO T08_Pregunta (T08_CodPregunta, T08_DescPregunta, T08_FechaAlta, T08_Respuesta, T08_AutorRespuesta, T08_Valor)
+INSERT INTO T08_Pregunta (T08_CodPregunta, T08_DescPregunta, T08_FechaAlta, T08_Respuesta, T08_AutorRespuesta, T08_Valor, T08_FechaBaja) 
 VALUES 
-('001', '¿Cuál es la capital de Francia?', '2024-02-12 10:00:00', 'París', 'Admin1', 10),
-('002', '¿Quién escribió la Odisea?', '2024-02-12 10:05:00', 'Homero', 'Admin2', 8),
-('003', '¿En qué año comenzó la Primera Guerra Mundial?', '2024-02-12 10:10:00', '1914', 'Admin3', 9),
-('004', '¿Cuál es el símbolo químico del oro?', '2024-02-12 10:15:00', 'Au', 'Admin4', 7),
-('005', '¿Qué año se firmó la Declaración de Independencia de los Estados Unidos?', '2024-02-12 10:20:00', '1776', 'Admin5', 9);
+('001', '¿Cuál es tu color favorito?', '2024-02-14 08:00:00', 'Azul', 'Juan', 5, NULL),
+('002', '¿Cuál es tu película favorita?', '2024-02-14 08:05:00', 'El Padrino', 'María', 4, '2024-02-28 08:05:00'),
+('003', '¿Qué deporte te gusta más?', '2024-02-14 08:10:00', 'Fútbol', 'Carlos', 5, NULL),
+('004', '¿Cuál es tu comida favorita?', '2024-02-14 08:15:00', 'Pizza', 'Laura', 4, NULL),
+('005', '¿Qué libro has leído recientemente?', '2024-02-14 08:20:00', 'Cien años de soledad', 'Pedro', 5, '2024-03-15 08:20:00'),
+('006', '¿Qué música te gusta escuchar?', '2024-02-14 08:25:00', 'Rock', 'Ana', 4, NULL),
+('007', '¿Cuál es tu destino de vacaciones soñado?', '2024-02-14 08:30:00', 'Bora Bora', 'Pablo', 5, NULL),
+('008', '¿Cuál es tu animal favorito?', '2024-02-14 08:35:00', 'Perro', 'Sofía', 4, NULL),
+('009', '¿Cuál es tu hobby favorito?', '2024-02-14 08:40:00', 'Pintar', 'Diego', 5, '2024-03-01 08:40:00'),
+('010', '¿Cuál es tu serie de TV favorita?', '2024-02-14 08:45:00', 'Breaking Bad', 'Elena', 4, NULL);
+
 

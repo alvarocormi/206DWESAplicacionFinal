@@ -56,6 +56,63 @@ class PreguntaPDO
 			return false;
 		}
 	}
+	
+	 /**
+     * Metodo que nos permite buscar una Pregunta por el código 
+     * 
+     * @param string $codPregunta El código de la pregunta
+     * 
+     * @return object Pregunta
+     */
+    public static function buscarPreguntaPorCod($codPregunta) {
+        //CONSULTA SQL - SELECT
+        $consulta = <<<CONSULTA
+            SELECT * FROM T08_Pregunta 
+            WHERE T08_CodPregunta = '{$codPregunta}';
+        CONSULTA;
+
+        $resultado = DBPDO::ejecutaConsulta($consulta); // Ejecuto la consulta
+
+        if ($resultado->rowCount() > 0) { // Si la consulta tiene más de '0' valores
+            $oPregunta = $resultado->fetchObject(); // Guardo en la variable el resultado de la consulta en forma de objeto
+
+            if ($oPregunta) { // Instancio un nuevo objeto Pregunta con todos sus datos
+                return new Pregunta(// Y lo devuelvo
+					$oPregunta->T08_CodPregunta,
+					$oPregunta->T08_DescPregunta,
+					$oPregunta->T08_FechaAlta,
+					$oPregunta->T08_Respuesta,
+					$oPregunta->T08_AutorRespuesta,
+					$oPregunta->T08_Valor,
+					$oPregunta->T08_FechaBaja);
+            } else {
+                return $oPregunta; // Si no devuelvo el valor por defecto 'NULL'
+            }
+        }
+    }
+
+	 /**
+     * Modifica los valores de una pregunta
+     *
+     * @param int $codPregunta Codigo de la pregunta a editar
+     * @param int $valorPregunta Valor de la pregunta a editar
+     * @param string $descPregunta Descripción de la pregunta a editar
+     * 
+     * @return PDOStatment Devuelve el resultado de la coonsulta
+     */
+    public static function modificarPregunta($codPregunta,$descPregunta, $valorPregunta) {
+
+        // Consulta de busqueda según el valor del parametro introducido
+        $consulta = <<<CONSULTA
+            UPDATE T08_Pregunta SET 
+            T08_DescPregunta = '{$descPregunta}',
+            T08_Valor = {$valorPregunta}
+            WHERE T08_CodPregunta = '{$codPregunta}';
+        CONSULTA;
+
+        return DBPDO::ejecutaConsulta($consulta); // Ejecutamos y devolvemos la consulta
+    }
+
 
 
 }

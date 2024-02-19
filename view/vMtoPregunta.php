@@ -4,7 +4,7 @@
         <div>
             <div class="buscarMTO">
                 <label for="DescPregunta" style="margin-top: 5px;">Pregunta: </label>
-                <input type="text" id="descPregunta" name="descPregunta" width="1200px" value="<?php echo $_SESSION['criterioBusquedaPreguntas']['descripcionBuscada'] ?? ''; ?>">
+                <input type="text" id="descPregunta" name="descPregunta" value="<?php echo $_SESSION['criterioBusquedaPreguntas']['descripcionBuscada'] ?? ''; ?>">
                 <input type="submit" value="Buscar" name="buscarPreguntaPorDesc">
                 <?php echo ($aErrores['DescPregunta'] != null ? "<span style='color:red'>" . $aErrores['DescPregunta'] . "</span>" : null); ?>
             </div>
@@ -19,7 +19,7 @@
 
     //Creamos una tabla en la que imprimiremos el nombre del atributo y el valor del mismo.
     // Se crea una tabla para imprimir las tuplas
-    echo "<table class='table table-bordered'><thead><tr><th>Codigo</th><th>Descripcion</th><th>FechaAlta</th><th>Respuesta</th><th>Autor</th><th>Valor</th><th>FechaBaja</th><th><-T-></th></tr></thead><tbody>";
+    echo "<table class='table table-bordered border-5'><thead><tr><th>Codigo</th><th>Descripcion</th><th>FechaAlta</th><th>Respuesta</th><th>Autor</th><th>Valor</th><th>FechaBaja</th><th><-T-></th></tr></thead><tbody>";
 
     // Se instancia un objeto tipo PDO que almacena cada fila de la consulta
     foreach ($aPreguntasVista as $aPregunta) {
