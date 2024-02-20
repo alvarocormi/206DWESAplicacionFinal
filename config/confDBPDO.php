@@ -4,7 +4,7 @@
  * @author Ismael Ferreras García
  * @version 1.0 
  * @since 01/12/2023
- * Archivo de configuración de la BD
+ * Archivo de configuración de la Base de datos
  */
 
 // Archivo de configuración de la BD del Instituto

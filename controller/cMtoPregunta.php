@@ -12,8 +12,8 @@
 // Si el usuario pulsa el botón 'Salir', mando al usuario a la página 'inicioPrivado'
 if (isset($_REQUEST['salirPreguntas'])) {
 
-    // Almaceno la página anterior para poder volver
-    $_SESSION['paginaAnterior'] = 'consultarPregunta';
+    //Eliminamos el valor de la sesion
+    unset($_SESSION['criterioBusquedaPreguntas']['descripcionBuscada']);
 
     // Asigno a la página en curso la página inicioPublico
     $_SESSION['paginaEnCurso'] = 'inicioPrivado';
@@ -25,17 +25,55 @@ if (isset($_REQUEST['salirPreguntas'])) {
     exit;
 }
 
-// Estructura del botón editarDepartamento, si el usuario pulsa el botón del icono de un 'lapiz'
+// Estructura del botón editarPregunta, si el usuario pulsa el botón del icono de un 'lapiz'
 if (isset($_REQUEST['cConsultarModificarPregunta'])) {
 
-    // Almaceno en una variable de sesión el Codigo del Departamento Seleccionado
+    // Almaceno en una variable de sesión el Codigo de la pregunta Seleccionado
     $_SESSION['codPreguntaActual'] = $_REQUEST['cConsultarModificarPregunta']; 
 
      // Almaceno la página anterior para poder volver
     $_SESSION['paginaAnterior'] = 'consultarPregunta';
 
-    //Asignamos la pagina en curso a editarDepartamento
+    //Asignamos la pagina en curso a editarPregunta
     $_SESSION['paginaEnCurso'] = 'editarPregunta'; 
+
+    // Redirecciono al index de la APP
+    header('Location: index.php');
+
+    //Finalizamos la ejecucion del script
+    exit;
+}
+
+// Estructura del botón mostrarPregunta, si el usuario pulsa el botón del icono de un 'lapiz'
+if (isset($_REQUEST['cMostrarPregunta'])) {
+
+    // Almaceno en una variable de sesión el Codigo del Pregunta Seleccionado
+    $_SESSION['codPreguntaActual'] = $_REQUEST['cMostrarPregunta']; 
+
+     // Almaceno la página anterior para poder volver
+    $_SESSION['paginaAnterior'] = 'consultarPregunta';
+
+    //Asignamos la pagina en curso a editarPregunta
+    $_SESSION['paginaEnCurso'] = 'mostrarPregunta'; 
+
+    // Redirecciono al index de la APP
+    header('Location: index.php');
+
+    //Finalizamos la ejecucion del script
+    exit;
+}
+
+// Estructura del botón borrarPregunta, si el usuario pulsa el botón del icono de un 'lapiz'
+if (isset($_REQUEST['cBorrarPregunta'])) {
+
+    // Almaceno en una variable de sesión el Codigo del Pregunta Seleccionado
+    $_SESSION['codPreguntaActual'] = $_REQUEST['cBorrarPregunta']; 
+
+     // Almaceno la página anterior para poder volver
+    $_SESSION['paginaAnterior'] = 'consultarPregunta';
+
+    //Asignamos la pagina en curso a borrarPregunta
+    $_SESSION['paginaEnCurso'] = 'borrarPregunta'; 
 
     // Redirecciono al index de la APP
     header('Location: index.php');

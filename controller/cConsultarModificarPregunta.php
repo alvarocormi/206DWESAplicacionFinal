@@ -31,7 +31,8 @@ $entradaOK = true;
 // Declaramos el array de errores y lo inicializamos vacío
 $aErrores = [
     'T08_DescPregunta' => '',
-    'T08_Valor' => ''
+    'T08_Valor' => '',
+    'T08_AutorRespuesta' => ''
 ];
 
 /*
@@ -52,9 +53,13 @@ if ($oPreguntaAEditar) {
     $fechaBajaPreguntaAEditar = $oPreguntaAEditar->getFechaBaja();
 }
 
-if (isset($_REQUEST['confirmarCambiosEditar'])) { // Comprobamos que el usuario haya enviado el formulario para 'confirmar los cambios'
+// Comprobamos que el usuario haya enviado el formulario para 'confirmar los cambios'
+if (isset($_REQUEST['confirmarCambiosEditar'])) { 
+
+    //Almacenamos los errores
     $aErrores['T08_DescPregunta'] = validacionFormularios::comprobarAlfaNumerico($_REQUEST['T08_DescPregunta'], 255, 3, 1);
-    $aErrores['T08_Valor'] = validacionFormularios::comprobarFloat($_REQUEST['T08_Valor'], PHP_FLOAT_MAX, -PHP_FLOAT_MAX, 0);
+    $aErrores['T08_Valor'] = validacionFormularios::comprobarFloat($_REQUEST['T08_Valor'], PHP_FLOAT_MAX, -PHP_FLOAT_MAX, 1);
+    $aErrores['T08_AutorRespuesta'] = validacionFormularios::comprobarAlfaNumerico($_REQUEST['T08_AutorRespuesta'], 255, 3, 1);
 
     // Recorremos el array de errores
     foreach ($aErrores as $campo => $error) {
@@ -79,7 +84,7 @@ if (isset($_REQUEST['confirmarCambiosEditar'])) { // Comprobamos que el usuario 
 if ($entradaOK) {
 
     // Y usando el metodo 'modificaDepartamento' de la clase 'DepartamentoPDO' recuperamos el objeto completo
-    PreguntaPDO::modificarPregunta($_SESSION['codPreguntaActual'], $_REQUEST['T08_DescPregunta'], $_REQUEST['T08_Valor']);
+    PreguntaPDO::modificarPregunta($_SESSION['codPreguntaActual'], $_REQUEST['T08_DescPregunta'], $_REQUEST['T08_Valor'],$_REQUEST['T08_AutorRespuesta']);
 
     // Almaceno la página anterior para poder volver
     $_SESSION['paginaAnterior'] = 'editarPregunta';

@@ -42,6 +42,8 @@ $aControladores = [
     'tecnologias' => 'controller/cTecnologias.php',
     'consultarPregunta' => 'controller/cMtoPregunta.php',
     'editarPregunta' => 'controller/cConsultarModificarPregunta.php',
+    'mostrarPregunta' => 'controller/cMostrarPregunta.php',
+    'borrarPregunta' => 'controller/cBorrarPregunta.php'
 
 ];
 
@@ -64,4 +66,6 @@ $aVistas = [
     'editarDepartamento' => 'view/vConsultarModificarDepartamento.php',
     'tecnologias' => 'view/vTecnologias.php',
     'editarPregunta' => 'view/vConsultarModificarPregunta.php',
+    'mostrarPregunta' => 'view/vMostrarPregunta.php',
+    'borrarPregunta' => 'view/vBorrarPregunta.php',
 ];

@@ -97,20 +97,46 @@ class PreguntaPDO
      * @param int $codPregunta Codigo de la pregunta a editar
      * @param int $valorPregunta Valor de la pregunta a editar
      * @param string $descPregunta Descripción de la pregunta a editar
+     * @param string $autorRespuestaPregunta Autor de la pregunta a editar
      * 
      * @return PDOStatment Devuelve el resultado de la coonsulta
      */
-    public static function modificarPregunta($codPregunta,$descPregunta, $valorPregunta) {
+    public static function modificarPregunta($codPregunta,$descPregunta, $valorPregunta, $autorRespuestaPregunta) {
 
         // Consulta de busqueda según el valor del parametro introducido
         $consulta = <<<CONSULTA
             UPDATE T08_Pregunta SET 
             T08_DescPregunta = '{$descPregunta}',
+            T08_AutorRespuesta = '{$autorRespuestaPregunta}',
             T08_Valor = {$valorPregunta}
             WHERE T08_CodPregunta = '{$codPregunta}';
         CONSULTA;
 
         return DBPDO::ejecutaConsulta($consulta); // Ejecutamos y devolvemos la consulta
+    }
+    
+    /**
+     * borrarPregunta
+     *
+     * @param  mixed $codPregunta
+     * @return void
+     */
+    public static function borrarPregunta($codPregunta) {
+
+        //Preparamos una consulta para eliminar un departamento por codigo
+        $consulta = "DELETE FROM T08_Pregunta WHERE T08_CodPregunta= '$codPregunta';";
+
+        //Ejecutamos la consulta
+        if(DBPDO::ejecutaConsulta($consulta)){
+
+            //Si la consulta se ejecuta correctamente devolvemos true
+            return true;
+        } else{
+
+            //Si hay algun fallo al ejecutar la consulta devolvemos false
+            return false;
+        }
+        
     }
 
 
