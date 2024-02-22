@@ -1,6 +1,10 @@
 <?php
 
 /**
+ * Clase Departamento
+ * 
+ * Esta es la clase departamento
+ * 
  * @author Carlos García Cachón
  * @version 1.0
  * @since 03/01/2024
@@ -12,6 +16,8 @@
 
 /**
  * Clase Departamento
+ * 
+ * Esta es la clase departamento
  */
 class Departamento
 {

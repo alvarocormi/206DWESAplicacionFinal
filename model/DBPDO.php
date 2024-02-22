@@ -1,15 +1,21 @@
 <?php
 
 /**
+ * Clase DBPDO
+ * 
+ * Esta clase contiene el metodo necesario para realizar consultas sql
+ *
  * @author Alvaro Cordero
  * @version 1.0
  * @since 17/01/2024
- * 
  * @Annotation Proyecto LoginLogoutMulticapaPOO - Clase DBPDO
  * 
  */
+
 /**
  * Clase DBPDO
+ * 
+ * Esta clase contiene el metodo necesario para realizar consultas sql
  */
 class DBPDO implements DB {
 
