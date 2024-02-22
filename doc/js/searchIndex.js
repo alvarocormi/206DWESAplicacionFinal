@@ -118,7 +118,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\DBPDO",
             "name": "DBPDO",
-            "summary": "",
+            "summary": "Clase\u0020DBPDO",
             "url": "classes/DBPDO.html"
         },                {
             "fqsen": "\\DBPDO\u003A\u003AejecutaConsulta\u0028\u0029",
@@ -128,7 +128,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Departamento",
             "name": "Departamento",
-            "summary": "",
+            "summary": "Clase\u0020Departamento",
             "url": "classes/Departamento.html"
         },                {
             "fqsen": "\\Departamento\u003A\u003A__construct\u0028\u0029",
@@ -213,7 +213,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\DepartamentoPDO",
             "name": "DepartamentoPDO",
-            "summary": "DepartamentoPDO",
+            "summary": "Clase\u0020DepartamentoPDO",
             "url": "classes/DepartamentoPDO.html"
         },                {
             "fqsen": "\\DepartamentoPDO\u003A\u003AbuscaDepartamentosPorDesc\u0028\u0029",
@@ -233,32 +233,32 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ErrorApp",
             "name": "ErrorApp",
-            "summary": "",
+            "summary": "Clase\u0020ErrorApp",
             "url": "classes/ErrorApp.html"
         },                {
             "fqsen": "\\ErrorApp\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "__construct",
             "url": "classes/ErrorApp.html#method___construct"
         },                {
             "fqsen": "\\ErrorApp\u003A\u003AgetCodError\u0028\u0029",
             "name": "getCodError",
-            "summary": "",
+            "summary": "getCodError",
             "url": "classes/ErrorApp.html#method_getCodError"
         },                {
             "fqsen": "\\ErrorApp\u003A\u003AgetDescError\u0028\u0029",
             "name": "getDescError",
-            "summary": "",
+            "summary": "getDescError",
             "url": "classes/ErrorApp.html#method_getDescError"
         },                {
             "fqsen": "\\ErrorApp\u003A\u003AgetArchivoError\u0028\u0029",
             "name": "getArchivoError",
-            "summary": "",
+            "summary": "getArchivoError",
             "url": "classes/ErrorApp.html#method_getArchivoError"
         },                {
             "fqsen": "\\ErrorApp\u003A\u003AgetLineaError\u0028\u0029",
             "name": "getLineaError",
-            "summary": "",
+            "summary": "getLineaError",
             "url": "classes/ErrorApp.html#method_getLineaError"
         },                {
             "fqsen": "\\ErrorApp\u003A\u003A\u0024codError",
@@ -281,9 +281,154 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/ErrorApp.html#property_lineaError"
         },                {
+            "fqsen": "\\Pregunta",
+            "name": "Pregunta",
+            "summary": "Clase\u0020Pregunta",
+            "url": "classes/Pregunta.html"
+        },                {
+            "fqsen": "\\Pregunta\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "__construct",
+            "url": "classes/Pregunta.html#method___construct"
+        },                {
+            "fqsen": "\\Pregunta\u003A\u003AgetCodPregunta\u0028\u0029",
+            "name": "getCodPregunta",
+            "summary": "",
+            "url": "classes/Pregunta.html#method_getCodPregunta"
+        },                {
+            "fqsen": "\\Pregunta\u003A\u003AgetDescPregunta\u0028\u0029",
+            "name": "getDescPregunta",
+            "summary": "",
+            "url": "classes/Pregunta.html#method_getDescPregunta"
+        },                {
+            "fqsen": "\\Pregunta\u003A\u003AgetFechaAlta\u0028\u0029",
+            "name": "getFechaAlta",
+            "summary": "",
+            "url": "classes/Pregunta.html#method_getFechaAlta"
+        },                {
+            "fqsen": "\\Pregunta\u003A\u003AgetRespuesta\u0028\u0029",
+            "name": "getRespuesta",
+            "summary": "",
+            "url": "classes/Pregunta.html#method_getRespuesta"
+        },                {
+            "fqsen": "\\Pregunta\u003A\u003AgetAutorRespuesta\u0028\u0029",
+            "name": "getAutorRespuesta",
+            "summary": "",
+            "url": "classes/Pregunta.html#method_getAutorRespuesta"
+        },                {
+            "fqsen": "\\Pregunta\u003A\u003AgetValor\u0028\u0029",
+            "name": "getValor",
+            "summary": "",
+            "url": "classes/Pregunta.html#method_getValor"
+        },                {
+            "fqsen": "\\Pregunta\u003A\u003AgetFechaBaja\u0028\u0029",
+            "name": "getFechaBaja",
+            "summary": "",
+            "url": "classes/Pregunta.html#method_getFechaBaja"
+        },                {
+            "fqsen": "\\Pregunta\u003A\u003AsetCodPregunta\u0028\u0029",
+            "name": "setCodPregunta",
+            "summary": "",
+            "url": "classes/Pregunta.html#method_setCodPregunta"
+        },                {
+            "fqsen": "\\Pregunta\u003A\u003AsetDescPregunta\u0028\u0029",
+            "name": "setDescPregunta",
+            "summary": "",
+            "url": "classes/Pregunta.html#method_setDescPregunta"
+        },                {
+            "fqsen": "\\Pregunta\u003A\u003AsetFechaAlta\u0028\u0029",
+            "name": "setFechaAlta",
+            "summary": "",
+            "url": "classes/Pregunta.html#method_setFechaAlta"
+        },                {
+            "fqsen": "\\Pregunta\u003A\u003AsetRespuesta\u0028\u0029",
+            "name": "setRespuesta",
+            "summary": "",
+            "url": "classes/Pregunta.html#method_setRespuesta"
+        },                {
+            "fqsen": "\\Pregunta\u003A\u003AsetAutorRespuesta\u0028\u0029",
+            "name": "setAutorRespuesta",
+            "summary": "",
+            "url": "classes/Pregunta.html#method_setAutorRespuesta"
+        },                {
+            "fqsen": "\\Pregunta\u003A\u003AsetValor\u0028\u0029",
+            "name": "setValor",
+            "summary": "",
+            "url": "classes/Pregunta.html#method_setValor"
+        },                {
+            "fqsen": "\\Pregunta\u003A\u003AsetFechaBaja\u0028\u0029",
+            "name": "setFechaBaja",
+            "summary": "",
+            "url": "classes/Pregunta.html#method_setFechaBaja"
+        },                {
+            "fqsen": "\\Pregunta\u003A\u003A\u0024codPregunta",
+            "name": "codPregunta",
+            "summary": "",
+            "url": "classes/Pregunta.html#property_codPregunta"
+        },                {
+            "fqsen": "\\Pregunta\u003A\u003A\u0024descPregunta",
+            "name": "descPregunta",
+            "summary": "",
+            "url": "classes/Pregunta.html#property_descPregunta"
+        },                {
+            "fqsen": "\\Pregunta\u003A\u003A\u0024fechaAlta",
+            "name": "fechaAlta",
+            "summary": "",
+            "url": "classes/Pregunta.html#property_fechaAlta"
+        },                {
+            "fqsen": "\\Pregunta\u003A\u003A\u0024respuesta",
+            "name": "respuesta",
+            "summary": "",
+            "url": "classes/Pregunta.html#property_respuesta"
+        },                {
+            "fqsen": "\\Pregunta\u003A\u003A\u0024autorRespuesta",
+            "name": "autorRespuesta",
+            "summary": "",
+            "url": "classes/Pregunta.html#property_autorRespuesta"
+        },                {
+            "fqsen": "\\Pregunta\u003A\u003A\u0024valor",
+            "name": "valor",
+            "summary": "",
+            "url": "classes/Pregunta.html#property_valor"
+        },                {
+            "fqsen": "\\Pregunta\u003A\u003A\u0024fechaBaja",
+            "name": "fechaBaja",
+            "summary": "",
+            "url": "classes/Pregunta.html#property_fechaBaja"
+        },                {
+            "fqsen": "\\PreguntaPDO",
+            "name": "PreguntaPDO",
+            "summary": "Clase\u0020PreguntaPDO",
+            "url": "classes/PreguntaPDO.html"
+        },                {
+            "fqsen": "\\PreguntaPDO\u003A\u003AbuscarPreguntaPorDesc\u0028\u0029",
+            "name": "buscarPreguntaPorDesc",
+            "summary": "",
+            "url": "classes/PreguntaPDO.html#method_buscarPreguntaPorDesc"
+        },                {
+            "fqsen": "\\PreguntaPDO\u003A\u003AbuscarPreguntaPorCod\u0028\u0029",
+            "name": "buscarPreguntaPorCod",
+            "summary": "Metodo\u0020que\u0020nos\u0020permite\u0020buscar\u0020una\u0020Pregunta\u0020por\u0020el\u0020c\u00F3digo",
+            "url": "classes/PreguntaPDO.html#method_buscarPreguntaPorCod"
+        },                {
+            "fqsen": "\\PreguntaPDO\u003A\u003AmodificarPregunta\u0028\u0029",
+            "name": "modificarPregunta",
+            "summary": "Modifica\u0020los\u0020valores\u0020de\u0020una\u0020pregunta",
+            "url": "classes/PreguntaPDO.html#method_modificarPregunta"
+        },                {
+            "fqsen": "\\PreguntaPDO\u003A\u003AborrarPregunta\u0028\u0029",
+            "name": "borrarPregunta",
+            "summary": "borrarPregunta",
+            "url": "classes/PreguntaPDO.html#method_borrarPregunta"
+        },                {
+            "fqsen": "\\PreguntaPDO\u003A\u003AaltaPregunta\u0028\u0029",
+            "name": "altaPregunta",
+            "summary": "",
+            "url": "classes/PreguntaPDO.html#method_altaPregunta"
+        },                {
             "fqsen": "\\REST",
             "name": "REST",
-            "summary": "REST",
+            "summary": "Clase\u0020REST",
             "url": "classes/REST.html"
         },                {
             "fqsen": "\\REST\u003A\u003ApedirFotoNasa\u0028\u0029",
@@ -303,7 +448,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Usuario",
             "name": "Usuario",
-            "summary": "Usuario",
+            "summary": "Clase\u0020Usuario",
             "url": "classes/Usuario.html"
         },                {
             "fqsen": "\\Usuario\u003A\u003A__construct\u0028\u0029",
@@ -428,7 +573,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\UsuarioPDO",
             "name": "UsuarioPDO",
-            "summary": "UsuarioPDO",
+            "summary": "Clase\u0020UsuarioPDO",
             "url": "classes/UsuarioPDO.html"
         },                {
             "fqsen": "\\UsuarioPDO\u003A\u003AvalidarUsuario\u0028\u0029",

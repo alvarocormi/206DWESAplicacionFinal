@@ -1,4 +1,4 @@
-<title>MostrarPregunta- Alvaro Cordero Miñambres</title>
+<title>BorrarPregunta- Alvaro Cordero Miñambres</title>
 <div class="center" style="position: absolute; top: 48%; left: 50%; transform: translate(-50%, -50%);  border-radius: 5px; width: 500px; background: white; box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.05); height: 780px;">
     <h1 style="text-align: center; padding: 20px 0; font-size: 32px; color: black; font-weight: 500; border-bottom: 1px solid silver;">Editar</h1>
     <form name="formulario" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" style="margin-bottom: 20px; padding: 0 40px; box-sizing: border-box;">

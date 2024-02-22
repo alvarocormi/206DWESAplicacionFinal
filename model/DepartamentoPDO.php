@@ -10,7 +10,7 @@
  */
 
 /**
- * DepartamentoPDO
+ * Clase DepartamentoPDO
  */
 class DepartamentoPDO
 {

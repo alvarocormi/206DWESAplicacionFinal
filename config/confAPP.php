@@ -43,7 +43,8 @@ $aControladores = [
     'consultarPregunta' => 'controller/cMtoPregunta.php',
     'editarPregunta' => 'controller/cConsultarModificarPregunta.php',
     'mostrarPregunta' => 'controller/cMostrarPregunta.php',
-    'borrarPregunta' => 'controller/cBorrarPregunta.php'
+    'borrarPregunta' => 'controller/cBorrarPregunta.php',
+    'altaPregunta' => 'controller/cAltaPregunta.php'
 
 ];
 
@@ -68,4 +69,6 @@ $aVistas = [
     'editarPregunta' => 'view/vConsultarModificarPregunta.php',
     'mostrarPregunta' => 'view/vMostrarPregunta.php',
     'borrarPregunta' => 'view/vBorrarPregunta.php',
+    'altaPregunta' => 'view/vAltaPregunta.php'
+
 ];

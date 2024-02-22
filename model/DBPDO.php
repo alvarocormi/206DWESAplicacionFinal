@@ -8,6 +8,9 @@
  * @Annotation Proyecto LoginLogoutMulticapaPOO - Clase DBPDO
  * 
  */
+/**
+ * Clase DBPDO
+ */
 class DBPDO implements DB {
 
     /**

@@ -10,7 +10,7 @@
  */
 
 /**
- * REST
+ * Clase REST
  */
 class REST
 {

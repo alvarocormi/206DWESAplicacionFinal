@@ -10,6 +10,9 @@
  * 
  */
 
+/**
+ * Clase Departamento
+ */
 class Departamento
 {
 	/**

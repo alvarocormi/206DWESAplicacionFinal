@@ -202,9 +202,9 @@ footer {
 
 .error {
   color: red;
-  left: 60%;
+  left: 0%;
   position: absolute;
-  top: 10px;
+  top: 43px;
 }
 
 .formulario {
@@ -227,7 +227,7 @@ footer {
   display: flex;
   position: absolute;
   bottom: 90px;
-  left: 48%;
+  left: 45%;
   justify-content: center;
 }
 
@@ -245,12 +245,41 @@ footer {
   outline: none;
 }
 
-.buscarMTO {
+.logica {
   border: 1px solid black;
+}
+
+.alta {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.alta input {
+  height: 30px;
+  width: 180px;
+  border: 1px solid;
+  background: black;
+  border-radius: 5px;
+  font-size: 16px;
+  color: white;
+  font-weight: 400;
+  cursor: pointer;
+  outline: none;
+}
+
+
+.alta input:hover {
+  background: white;
+  color: black;
+}
+
+
+.buscarMTO {
   display: flex;
   justify-content: center;
   width: 1300px;
-  height: 120px;
+  height: 80px;
   align-items: center;
   border-radius: 5px;
 }

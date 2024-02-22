@@ -5,12 +5,19 @@
 <div class="formulario">
     <form name="formulario" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" class="form-check-inline">
         <div>
-            <div class="buscarMTO">
-                <label for="DescPregunta" style="margin-top: 5px;">Pregunta: </label>
-                <input type="text" id="descPregunta" name="descPregunta" value="<?php echo $_SESSION['criterioBusquedaPreguntas']['descripcionBuscada'] ?? ''; ?>">
-                <input type="submit" value="Buscar" name="buscarPreguntaPorDesc">
-                <?php echo ($aErrores['DescPregunta'] != null ? "<span style='color:red'>" . $aErrores['DescPregunta'] . "</span>" : null); ?>
+            <div class="logica">
+                <div class="buscarMTO">
+                    <label for="DescPregunta" style="margin-top: 5px;">Pregunta: </label>
+                    <input type="text" id="descPregunta" name="descPregunta" value="<?php echo $_SESSION['criterioBusquedaPreguntas']['descripcionBuscada'] ?? ''; ?>">
+                    <input type="submit" value="Buscar" name="buscarPreguntaPorDesc">
+                    <?php echo ($aErrores['DescPregunta'] != null ? "<span style='color:red'>" . $aErrores['DescPregunta'] . "</span>" : null); ?>
+                </div>
+                <div class="alta">
+                    <input type="submit" value="Añadir Pregunta" name="cAltaPregunta">
+                </div>
             </div>
+
+
             <div class="botonsMTO">
                 <input type="submit" value="Cancelar" name="salirPreguntas">
             </div>

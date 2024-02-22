@@ -82,7 +82,26 @@ if (isset($_REQUEST['cBorrarPregunta'])) {
     exit;
 }
 
-//Declaración de variables de estructura para validar la ENTRADA de RESPUESTAS o ERRORES
+
+// Estructura del botón altaPregunta, si el usuario pulsa el botón de añadir pregunta
+if (isset($_REQUEST['cAltaPregunta'])) {
+
+    // Almaceno en una variable de sesión el Codigo del Pregunta Seleccionado
+    $_SESSION['codPreguntaActual'] = $_REQUEST['cAltaPregunta']; 
+
+     // Almaceno la página anterior para poder volver
+    $_SESSION['paginaAnterior'] = 'consultarPregunta';
+
+    //Asignamos la pagina en curso a altaPregunta
+    $_SESSION['paginaEnCurso'] = 'altaPregunta'; 
+
+    // Redirecciono al index de la APP
+    header('Location: index.php');
+
+    //Finalizamos la ejecucion del script
+    exit;
+}
+
 
 //Indica si todas las respuestas son correctas
 $entradaOK = true;
