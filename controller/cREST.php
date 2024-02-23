@@ -9,8 +9,12 @@
  * 
  */
 
+//Inicializamos la variable text a null
 $text = null;
 
+/**
+ * Creamos un array para almacenar las respuestas de la api
+ */
 $aVistaRest = [
     'nasa' => [],
 ];
@@ -58,7 +62,10 @@ if (isset($_REQUEST['texto'])) {
 }
 
 
-
+/**
+ * Llamamos a los metodos de la clase REST
+ * textTrasnlator , pedirFotoNasa
+ */
 $text = REST::textTranslator(isset( $_SESSION['textoTraducido']) ?  $_SESSION['textoTraducido'] : null);
 $aVistaRest['nasa'] = REST::pedirFotoNasa(isset( $_SESSION['nasaFecha']) ?  $_SESSION['nasaFecha'] : date('Y-m-d'));
 

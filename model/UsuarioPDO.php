@@ -10,7 +10,7 @@
  */
 
 /**
- * Clase UsuarioPDO
+ * UsuarioPDO
  */
 class UsuarioPDO implements UsuarioDB {
 

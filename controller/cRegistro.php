@@ -4,7 +4,7 @@
  * @version 1.0
  * @since 20/01/2024
  * 
- * @Annotation Proyecto LoginLogoutMulticapaPOO - Parte de 'cInicioPublico'
+ * @Annotation Proyecto LoginLogoutMulticapaPOO - Parte de 'cRegistro'
  * 
  */
 
@@ -91,7 +91,11 @@ if (isset($_REQUEST['registrarse'])) {
             $entradaOK = false;
         }
     }
+
+  //Si no le al boton registrarse  
 } else {
+
+    //Ponemos el boton de entradaOK a false
     $entradaOK = false;
 }
 
@@ -121,4 +125,5 @@ if ($entradaOK) {
     exit;
 }
 
-require_once $aVistas['layout']; // Cargo la vista de 'registro'
+// Cargo la vista de 'registro'
+require_once $aVistas['layout']; 

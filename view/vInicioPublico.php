@@ -3,7 +3,7 @@
     <div class="carta">
         <div class="textCard">
             <p>IR A DIAGRAMA DE CLASES</p>
-            <a href="\206DWESAplicacionFinal\doc\230129DiagramaDeClases.pdf" target="_blank">CLASES</a>
+            <a href="\206DWESAplicacionFinal\doc\diagramaDeClasesAlvaroCordero.svg" target="_blank">CLASES</a>
         </div>
     </div>
     <div class="carta">

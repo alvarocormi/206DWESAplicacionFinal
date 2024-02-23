@@ -321,3 +321,24 @@ footer {
   color: black;
 }
 
+/*TECNOLOGIAS*/
+.tecnologias {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
+}
+
+.tecnologias h1 {
+  margin-bottom: 40px;
+}
+
+.tecnologias table {
+  display: flex;
+  justify-content: center;
+}
+
+.tecnologias table td{
+  background-color: transparent;
+  padding: 50px;
+}

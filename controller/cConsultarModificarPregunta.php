@@ -15,7 +15,7 @@ if (isset($_REQUEST['cancelarEditar'])) {
     // Almaceno la página anterior para poder volver
     $_SESSION['paginaAnterior'] = 'editarPregunta';
 
-    // Asigno a la página en curso la pagina de consultarDepartamento
+    // Asigno a la página en curso la pagina de consultarPregunta
     $_SESSION['paginaEnCurso'] = 'consultarPregunta';
 
     // Redirecciono al index de la APP
@@ -36,13 +36,13 @@ $aErrores = [
 ];
 
 /*
- * Recuperamos el código del departamento seleccionado anteriormente por medio de una variable de sesión
- * Y usando el metodo 'buscaDepartamentoPorCod' de la clase 'DepartamentoPDO' recuperamos el objeto completo
+ * Recuperamos el código del Pregunta seleccionado anteriormente por medio de una variable de sesión
+ * Y usando el metodo 'buscaPreguntaPorCod' de la clase 'PreguntaPDO' recuperamos el objeto completo
  */
 
 $oPreguntaAEditar = PreguntaPDO::buscarPreguntaPorCod($_SESSION['codPreguntaActual']);
 
-// Almaceno la información del departamento actual en las siguiente variables, para mostrarlas en el formulario
+// Almaceno la información del Pregunta actual en las siguiente variables, para mostrarlas en el formulario
 if ($oPreguntaAEditar) {
     $codPreguntaAEditar = $oPreguntaAEditar->getCodPregunta();
     $descripcionPreguntaAEditar = $oPreguntaAEditar->getDescPregunta();
@@ -83,13 +83,13 @@ if (isset($_REQUEST['confirmarCambiosEditar'])) {
 // Si el usuario ha rellenado el formulario correctamente rellenamos el array aFormulario con las respuestas introducidas por el usuario
 if ($entradaOK) {
 
-    // Y usando el metodo 'modificaDepartamento' de la clase 'DepartamentoPDO' recuperamos el objeto completo
+    // Y usando el metodo 'modificaPregunta' de la clase 'PreguntaPDO' recuperamos el objeto completo
     PreguntaPDO::modificarPregunta($_SESSION['codPreguntaActual'], $_REQUEST['T08_DescPregunta'], $_REQUEST['T08_Valor'],$_REQUEST['T08_AutorRespuesta']);
 
     // Almaceno la página anterior para poder volver
     $_SESSION['paginaAnterior'] = 'editarPregunta';
 
-    // Asigno a la página en curso la pagina de consultarDepartamento
+    // Asigno a la página en curso la pagina de consultarPregunta
     $_SESSION['paginaEnCurso'] = 'consultarPregunta';
 
     // Redirecciono al index de la APP
@@ -99,5 +99,5 @@ if ($entradaOK) {
     exit;
 }
 
-// Cargo la vista de 'consultarModificarDepartamento'
+// Cargo la vista de 'consultarModificarPregunta'
 require_once $aVistas['layout'];

@@ -10,7 +10,7 @@
  */
 
 /**
- * Clase REST
+ * REST
  */
 class REST
 {
@@ -36,7 +36,13 @@ class REST
         }
     }
 
-
+    
+    /**
+     * textTranslator
+     *
+     * @param  mixed $texto
+     * @return void
+     */
     public static function textTranslator($texto)
     {
         // Inicia una nueva sesión y obtiene el manipulador cURL

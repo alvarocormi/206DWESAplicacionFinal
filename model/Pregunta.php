@@ -11,7 +11,7 @@
  */
 
 /**
- * Clase Pregunta
+ * Pregunta
  */
 class Pregunta
 {	

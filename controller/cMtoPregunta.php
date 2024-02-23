@@ -5,7 +5,7 @@
  * @version 1.0
  * @since 26/01/2024
  * 
- * @Annotation Proyecto LoginLogoutMulticapaPOO - Parte de 'MtoDepartamentos'
+ * @Annotation Proyecto LoginLogoutMulticapaPOO - Parte de 'MtoPregunta'
  * 
  */
 
@@ -180,8 +180,10 @@ if ($aPreguntasBuscadas) {
             //Guardo en el valor fechaBaja la fecha de baja del departamento
             'autorRespuesta' => $oPregunta->getAutorRespuesta() ,
 
+            //Guardo el valor de la respuesta
             'valorRespuesta' => $oPregunta->getValor(),
 
+            //Guarda el valor de la fecha Baja
             'fechaBajaRespuesta' => !is_null($oPregunta->getFechaBaja()) ? $oPregunta->getFechaBaja() : '' ,
 
         ]);

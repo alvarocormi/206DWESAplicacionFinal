@@ -9,6 +9,7 @@
  * 
  * @Annotation Proyecto LoginLogOFF Alvaro Cordero - Parte Login
  */
+
 // Verifica si la variable 'cancelar' está definida en la solicitud ($_REQUEST)
 if (isset($_REQUEST['cancelar'])) {
 

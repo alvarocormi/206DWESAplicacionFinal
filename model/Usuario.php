@@ -10,7 +10,7 @@
  */
 
 /**
- * Clase Usuario
+ * Usuario
  */
 class Usuario {
 

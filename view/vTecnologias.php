@@ -1,39 +1,37 @@
-<title>Alvaro Cordero Miñambres - REST</title>
-<div style="display: flex;">
-    <div style="margin-top: 50px; margin-left: 50px; max-width: 29%; display: flex; justify-content: center;">
-        <form name="formulario1" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" ">
-        <fieldset class=" nasa">
-            <legend>
-                <h2>Foto del dia de la nasa</h2>
-            </legend>
-            <input type="date" name="fecha" value="<?php echo isset($_SESSION['nasaFecha']) ? $_SESSION['nasaFecha'] :  date("Y-m-d") ?>" max=<?php $hoy = date("Y-m-d");
-                                                                                                                                                echo $hoy; ?>>
-            <input type="submit" value="Aceptar" name="nasa">
-            <p><b>Titulo de la Imagen:</b> <?php echo $aVistaRest['nasa']['title']; ?></p>
-            <img src="<?php echo $aVistaRest['nasa']['hdurl']; ?>" width="300px" height="300px" />
-            <hr>
-            <p style="margin-top: 20px;"><span style="font-weight: bold;">URL</span>: https://api.nasa.gov/planetary/apod?api_key=rAIYGgvhzNQg1Lxtpe90waf8orEmQPTrZrfdra14&date=$fecha", false, $context</p>
-            <p><span style="font-weight: bold;">Parametros:</span> Fecha</p>
-            <p><span style="font-weight: bold;">Metodo:</span> GET</p>
-            </fieldset>
-        </form>
-    </div>
-    <div style="max-width: 33%; margin-top: 50px; margin-left: 150px;">
-        <h2>Español -> Ingles</h2>
-        <form name="formulario1" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" ">
-        <textarea cols=" 40" rows="10" style="width: 339px; height: 183px;" name="texto"><?php echo $_SESSION['textoTraducido'] ?></textarea>
-            <br>
-            <input type="submit" style="margin-top: 10px;" value="Enviar" name="traductor">
-            <p><b>Traduccion:</b> <?php echo($text); ?></p>
-        </form>
-        <hr>
-        <p style="margin-top: 20px;"><span style="font-weight: bold;">URL</span>: https://text-translator2.p.rapidapi.com/translate</p>
-        <p><span style="font-weight: bold;">Parametros:</span> Languaje, texto</p>
-        <p><span style="font-weight: bold;">Metodo:</span> POST</p>
+<title>Tecnologias - Alvaro Cordero Miñambres</title>
+<div class="tecnologias">
+    <h1>Tecnologias</h1>
+    <table class="table table-borderless">
+        <tr>
+            <td><a target="_blank" href="https://netbeans.apache.org/front/main/"><img src="webroot/img/logosTecnologias/netbeans.png" width="64px" class="img-fluid" alt="NetBeans"></a></td>
+            <td><a target="_blank" href="https://code.visualstudio.com/"><img src="webroot/img/logosTecnologias/visual-studio.png" class="img-fluid" alt="Visual"></a></td>
+            <td><a target="_blank" href="https://www.eclipse.org/"><img src="webroot/img/logosTecnologias/eclipse.png" width="64px" class="img-fluid" alt="Eclipse"></a></td>
+            <td><a target="_blank" href="https://tomcat.apache.org/"><img src="webroot/img/logosTecnologias/tomcat.png" class="img-fluid" alt="Tomcat"></a></td>
+            <td><a target="_blank" href="https://httpd.apache.org/"><img src="webroot/img/logosTecnologias/apache.png" width="64px" class="img-fluid" alt="Apache"></a></td>
+            <td><a target="_blank" href="https://www.php.net/"><img src="webroot/img/logosTecnologias/php.png" class="img-fluid" alt="PHP"></a></td>
 
-    </div>
-</div>
+        </tr>
+        <tr>
+            <td><a target="_blank" href="https://www.python.org/"><img src="webroot/img/logosTecnologias/python.png" class="img-fluid" alt="Python"></a></td>
+            <td><a target="_blank" href="https://www.java.com/es/"><img src="webroot/img/logosTecnologias/java.png" class="img-fluid" alt="Java"></a></td>
+            <td><a target="_blank" href="https://www.mysql.com/"><img src="webroot/img/logosTecnologias/mysql.png" class="img-fluid" alt="MySql"></a></td>
+            <td><a target="_blank" href="https://es.wikipedia.org/wiki/JavaScript"><img src="webroot/img/logosTecnologias/js.png" class="img-fluid" alt="JS"></a></td>
+            <td><a target="_blank" href="https://es.wikipedia.org/wiki/HTML"><img src="webroot/img/logosTecnologias/html.png" class="img-fluid" alt="HTML"></a></td>
+            <td><a target="_blank" href="https://es.wikipedia.org/wiki/CSS"><img src="webroot/img/logosTecnologias/css.png" class="img-fluid" alt="CSS"></a></td>
 
+        </tr>
+        <tr>
+            <td><a target="_blank" href="https://getbootstrap.com/"><img src="webroot/img/logosTecnologias/bootstrap.png" class="img-fluid" alt="Boostrap"></a></td>
+            <td><a target="_blank" href="https://phpdoc.org/"><img src="webroot/img/logosTecnologias/phpdoc.svg" class="img-fluid" alt="PHPDOC"></a></td>
+            <td><a target="_blank" href="https://github.com/"><img src="webroot/img/logosTecnologias/git.png" class="img-fluid" alt="Git"></a></td>
+            <td><a target="_blank" href="https://www.ionos.es/"><img src="webroot/img/logosTecnologias/ionos.png" width="64px" class="img-fluid" alt="Ionos"></a></td>
+            <td><a target="_blank" href="https://api.nasa.gov/"><img src="webroot/img/logosTecnologias/api.png" class="img-fluid" alt="API"></a></td>
+            <td><a target="_blank" href="https://filezilla-project.org/"><img src="webroot/img/logosTecnologias/filezilla.png" width="64px" class="img-fluid" alt="Filezilla"></a></td>
+        </tr>
+        </tbody>
+    </table>
+    
 <form name="formulario" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-    <input style=" margin-right: 10px; width: 10%; margin-top: 100px; height: 50px; border: 1px solid; background: black; border-radius: 5px; font-size: 18px; color: white; font-weight: 500; cursor: pointer; outline: none; display: block; margin-left: 45%;" type="submit" value="Volver" name="volver">
+    <input style=" width: 300px; margin-top: 100px; height: 50px; border: 1px solid; background: black; border-radius: 5px; font-size: 18px; color: white; font-weight: 500; cursor: pointer; outline: none; display: block;" type="submit" value="Volver" name="volver">
 </form>
+</div>

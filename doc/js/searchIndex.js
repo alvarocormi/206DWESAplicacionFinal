@@ -283,7 +283,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Pregunta",
             "name": "Pregunta",
-            "summary": "Clase\u0020Pregunta",
+            "summary": "Pregunta",
             "url": "classes/Pregunta.html"
         },                {
             "fqsen": "\\Pregunta\u003A\u003A__construct\u0028\u0029",
@@ -428,7 +428,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\REST",
             "name": "REST",
-            "summary": "Clase\u0020REST",
+            "summary": "REST",
             "url": "classes/REST.html"
         },                {
             "fqsen": "\\REST\u003A\u003ApedirFotoNasa\u0028\u0029",
@@ -438,7 +438,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\REST\u003A\u003AtextTranslator\u0028\u0029",
             "name": "textTranslator",
-            "summary": "",
+            "summary": "textTranslator",
             "url": "classes/REST.html#method_textTranslator"
         },                {
             "fqsen": "\\REST\u003A\u003AapikeyNASA",
@@ -448,7 +448,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Usuario",
             "name": "Usuario",
-            "summary": "Clase\u0020Usuario",
+            "summary": "Usuario",
             "url": "classes/Usuario.html"
         },                {
             "fqsen": "\\Usuario\u003A\u003A__construct\u0028\u0029",
@@ -573,7 +573,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\UsuarioPDO",
             "name": "UsuarioPDO",
-            "summary": "Clase\u0020UsuarioPDO",
+            "summary": "UsuarioPDO",
             "url": "classes/UsuarioPDO.html"
         },                {
             "fqsen": "\\UsuarioPDO\u003A\u003AvalidarUsuario\u0028\u0029",
