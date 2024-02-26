@@ -8,6 +8,11 @@
  * 
  */
 
+ /**
+  * Usuario DB
+  * 
+  * Interfaz Usuario DB 
+  */
 interface UsuarioDB {
         
     /**

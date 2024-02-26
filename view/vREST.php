@@ -7,7 +7,7 @@
                 <h2>Foto del dia de la nasa</h2>
             </legend>
             <input type="date" name="fecha" value="<?php echo isset($_SESSION['nasaFecha']) ? $_SESSION['nasaFecha'] :  date("Y-m-d") ?>" max=<?php $hoy = date("Y-m-d");
-                                                                                                                                                echo $hoy; ?>>
+                                                                                                                                                echo $hoy; ?> min='1999-01-01'>
             <input type="submit" value="Aceptar" name="nasa">
             <p><b>Titulo de la Imagen:</b> <?php echo $aVistaRest['nasa']['title']; ?></p>
             <img src="<?php echo $aVistaRest['nasa']['hdurl']; ?>" width="300px" height="300px" />

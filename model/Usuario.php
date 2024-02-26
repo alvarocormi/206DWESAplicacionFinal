@@ -11,6 +11,8 @@
 
 /**
  * Usuario
+ * 
+ * Clase usuario
  */
 class Usuario {
 
